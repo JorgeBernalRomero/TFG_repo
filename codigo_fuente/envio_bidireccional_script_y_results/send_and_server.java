@@ -1,13 +1,12 @@
-package test;
+package testDelivery;
 
 import java.io.*;
 import javax.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 
-public class server_and_send {
-
-	//Class for files management
+public class send_and_server {
+    //Class for files management
 	public static class FileManager {
 		public static byte[] readFileAsBytes(File file) throws IOException {
 			try (RandomAccessFile accessFile = new RandomAccessFile(file, "r")){
@@ -32,7 +31,8 @@ public class server_and_send {
 	}
 
 
-	//Function which makes node to listen and await for the income message
+
+    //Function which makes node to listen and await for the income message
 	public static void listening (Session session){
 		try{
 			MessageConsumer consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"));
@@ -45,7 +45,7 @@ public class server_and_send {
 				System.out.println(m.getBytes("payload_1"));
 				System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
 
-				String saveDirectory = "/home/green/TFG/dir_destino_prueba"; //esta parte se podría sustituir pasando el dirDestino por parámetro
+				String saveDirectory = "/root/TFG/recepcionResults"; //esta parte se podría sustituir pasando el dirDestino por parámetro
 				File saveDir = new File(saveDirectory);
 				if (!saveDir.exists()) {
         			saveDir.mkdirs();
@@ -55,22 +55,7 @@ public class server_and_send {
 				FileManager.writeBytesToFile(destinationFile, m.getBytes("payload_1"));
         		System.out.println("File saved to: " + destinationFile.getAbsolutePath());
 
-        		//Código para la ejecución de un script en el servidor
-        		try {
-        			ProcessBuilder processBuilder = new ProcessBuilder("/bin/bash", "/home/green/TFG/dir_destino_prueba/payload_1"); //El directorio podría pasarse por parámetro
-        			processBuilder.redirectErrorStream(true);
-        			Process process = processBuilder.start();
-        			int exitCode = process.waitFor();
 
-        			if(exitCode == 0) {
-        				System.out.println("exe correct");
-        			}
-        			else {
-        				System.out.println("exe incorrect");
-        			}
-        		} catch (IOException | InterruptedException e) {
-        			e.printStackTrace();
-        		}
         		System.out.println("Got a message: ");
 			    System.out.println(msg);
 			 }
@@ -81,7 +66,6 @@ public class server_and_send {
 			}
 
 			System.out.println("fin");
-
 
 			consumer.close();
 
@@ -94,8 +78,10 @@ public class server_and_send {
 
 
 
-	public static void sending(Session session){
+
+    public static void sending(Session session){
 		try{
+			
 			MessageProducer producer = null;
 			Destination destination = session.createQueue("domibus.backend.jms.inQueue");
 			producer = session.createProducer(destination);
@@ -107,9 +93,9 @@ public class server_and_send {
 			messageMap.setStringProperty("service","bdx:noprocess");
 			messageMap.setStringProperty("serviceType","tc1");
 			messageMap.setStringProperty("action", "TC1Leg1");
-			messageMap.setStringProperty("fromPartyId", "domibus-green"); //nodo inicial
+			messageMap.setStringProperty("fromPartyId", "domibus-blue"); //nodo inicial
 			messageMap.setStringProperty("fromPartyType", "urn:oasis:names:tc:ebcore:partyid-type:unregistered");
-			messageMap.setStringProperty("toPartyId", "domibus-blue"); //nodo destino
+			messageMap.setStringProperty("toPartyId", "domibus-pink"); //nodo destino (cambiar a domibus-green o al nombre que sea)
 			messageMap.setStringProperty("toPartyType", "urn:oasis:names:tc:ebcore:partyid-type:unregistered");
 			messageMap.setStringProperty("fromRole", "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator");
 			messageMap.setStringProperty("toRole", "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder");
@@ -125,7 +111,7 @@ public class server_and_send {
 			messageMap.setStringProperty("payload_1_description", "message");
 
 			//Sending a file from one node to another works (testing script)
-			File file = new File("/home/green/TFG/dir_destino_prueba/outScript.txt"); //directorio puede modificarse o por parámetro???
+            File file = new File("/root/TFG/envioScripts/script.sh"); //directorio puede modificarse o por parámetro???
 			messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
 
 			producer.send(messageMap);
@@ -137,7 +123,10 @@ public class server_and_send {
 	}
 
 
-	//main code
+
+
+
+    //main code
 	public static void main(String[] args){
 		try{
 			//Connecting to the ActiveMQ connection factory
@@ -149,10 +138,10 @@ public class server_and_send {
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			//Calling function
-			listening(session);
+			sending(session);
 
 			//Calling function
-			sending(session);
+			listening(session);
 
 			connection.close();
 			System.out.println("Connection ends");

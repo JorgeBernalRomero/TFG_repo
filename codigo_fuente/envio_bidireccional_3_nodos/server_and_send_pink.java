@@ -125,7 +125,7 @@ public class server_and_send {
 			messageMap.setStringProperty("payload_1_description", "message");
 
 			//Sending a file from one node to another works (testing script)
-			File file = new File("/home/green/TFG/dir_destino_prueba/outScript.txt"); //directorio puede modificarse o por parámetro???
+			File file = new File("/home/green/TFG/dir_destino_prueba/outScriptPink.txt"); //directorio puede modificarse o por parámetro???
 			messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
 
 			producer.send(messageMap);

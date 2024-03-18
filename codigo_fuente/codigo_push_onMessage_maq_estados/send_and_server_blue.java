@@ -211,15 +211,15 @@ public class send_and_server implements MessageListener{
 
 
             try {
-                Thread.sleep(3 * 60 * 1000); // 3 minutos en milisegundos
+                Thread.sleep(60 * 1000); // 3 minutos en milisegundos
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
             System.out.println("me voy");
 
-            //connection.close();
-            //System.out.println("Connection ends");
+            connection.close();
+            System.out.println("Connection ends");
         }
         catch (Exception e){
             e.printStackTrace();

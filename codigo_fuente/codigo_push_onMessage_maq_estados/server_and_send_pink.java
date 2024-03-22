@@ -7,6 +7,10 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class server_and_send implements MessageListener{
 
+	static Session session;
+	static Connection connection = null;
+	static MessageConsumer consumer;
+
 	//Class for files management
 	public static class FileManager {
 		public static byte[] readFileAsBytes(File file) throws IOException {
@@ -32,6 +36,33 @@ public class server_and_send implements MessageListener{
 	}
 
 
+
+
+
+	public static void starting(){
+		try{
+			//Connecting to the ActiveMQ connection factory
+			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616"); //URL del servidor ActiveMQ
+
+			connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker
+			connection.start();
+			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+
+			consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"), "", true);
+            consumer.setMessageListener((MessageListener) new server_and_send());
+
+			/*for(int i=0; i<100; i++){
+				System.out.println("si");
+				consumer.close();
+			}*/
+
+			setStatus(0);
+
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+	}
 
 
 
@@ -127,6 +158,9 @@ public class server_and_send implements MessageListener{
 			    System.out.println(msg);
 
 				setStatus(1);
+			    //setStatus(2);
+
+				sending(session);
 			 }
 
 			else{
@@ -150,6 +184,14 @@ public class server_and_send implements MessageListener{
 
 		if(statusInterno == 2){
             System.out.println("Tasks done, finishing!");
+			try{
+				consumer.close();
+				session.close();
+				connection.close();
+			}
+			catch (Exception e){
+				e.printStackTrace();
+			}
             System.exit(0);
         }
     }
@@ -160,39 +202,8 @@ public class server_and_send implements MessageListener{
 
 	//main code
 	public static void main(String[] args){
-		try{
-			//Connecting to the ActiveMQ connection factory
-			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616"); //URL del servidor ActiveMQ
-			Connection connection = null;
 
-			connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker
-			connection.start();
-			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+		starting();
 
-			MessageConsumer consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"), "", true);
-            consumer.setMessageListener((MessageListener) new server_and_send());
-
-			setStatus(0);
-
-			try {
-				Thread.sleep(30*1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-
-			sending(session);
-
-			try {
-				Thread.sleep(3 * 60 * 1000); // 3 minutos en milisegundos
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-
-			//connection.close();
-			//System.out.println("Connection ends");
-		}
-		catch (Exception e){
-			e.printStackTrace();
-		}
 	}
 }

@@ -11,6 +11,9 @@ public class send_and_server implements MessageListener{
     static int maxSends = 2;
     static boolean reciboGreen = false;
     static boolean reciboPink = false;
+    static Session session;
+	static Connection connection = null;
+	static MessageConsumer consumer;
 
     //Class for files management
     public static class FileManager{
@@ -36,6 +39,39 @@ public class send_and_server implements MessageListener{
             }
         }
     }
+
+
+
+
+
+    public static void starting(){
+		try{
+			//Connecting to the ActiveMQ connection factory
+			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616"); //URL del servidor ActiveMQ
+
+			connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker
+			connection.start();
+			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+
+			consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"), "", true);
+            consumer.setMessageListener((MessageListener) new send_and_server());
+
+			/*for(int i=0; i<100; i++){
+				System.out.println("si");
+				consumer.close();
+			}*/
+
+			setStatus(0);
+
+            //Calling function
+            sending(session, "domibus-green");
+            sending(session, "domibus-pink");
+
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+	}
 
 
 
@@ -174,6 +210,14 @@ public class send_and_server implements MessageListener{
 
         if(statusInterno == 2){
             System.out.println("Tasks done, finishing!");
+            try{
+				consumer.close();
+				session.close();
+				connection.close();
+			}
+			catch (Exception e){
+				e.printStackTrace();
+			}
             System.exit(0);
         }
     }
@@ -183,47 +227,8 @@ public class send_and_server implements MessageListener{
 
     //main code
     public static void main(String[] args){
-        try{
-            //Connecting to the ActiveMQ connection factory
-            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616"); //URL del servidor ActiveMQ
-            Connection connection = null;
 
-            connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker
-            connection.start();
+        starting();
 
-            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-
-            setStatus(0);
-
-            MessageConsumer consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"), "", true);
-            consumer.setMessageListener((MessageListener) new send_and_server());
-
-            try {
-				Thread.sleep(15*1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-
-            //Calling function
-            sending(session, "domibus-green");
-            sending(session, "domibus-pink");
-
-
-
-            try {
-                Thread.sleep(60 * 1000); // 3 minutos en milisegundos
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            System.out.println("me voy");
-
-            connection.close();
-            System.out.println("Connection ends");
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
     }
-
 }

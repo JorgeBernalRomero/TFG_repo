@@ -1,11 +1,8 @@
 package testDelivery;
 
 import java.io.*;
-import java.util.Enumeration;
-
 import javax.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.activemq.command.ActiveMQTextMessage;
 
 
 public class send_and_server implements MessageListener{
@@ -17,6 +14,7 @@ public class send_and_server implements MessageListener{
     static Session session;
 	static Connection connection = null;
 	static MessageConsumer consumer;
+
 
     //Class for files management
     public static class FileManager{
@@ -59,11 +57,6 @@ public class send_and_server implements MessageListener{
 			consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"), "", true);
             consumer.setMessageListener((MessageListener) new send_and_server());
 
-			/*for(int i=0; i<100; i++){
-				System.out.println("si");
-				consumer.close();
-			}*/
-
 			setStatus(0);
 
             //Calling function
@@ -82,8 +75,7 @@ public class send_and_server implements MessageListener{
 
     public static void sending(Session session, String destinationNode){
         try{
-            System.out.println("Entro en el sending");
-
+            System.out.println("I'm in the sending now!");
 
             MessageProducer producer = null;
             Destination destination = session.createQueue("domibus.backend.jms.inQueue");
@@ -134,6 +126,7 @@ public class send_and_server implements MessageListener{
                 setStatus(1); //podría ponerse otro numero
             }
 
+            System.out.println("Sending message content is the following!");
             System.out.println(messageMap);
         }
         catch (Exception e){
@@ -148,9 +141,9 @@ public class send_and_server implements MessageListener{
     @Override
     public void onMessage(Message msg) {
         try {
-            System.out.println("Inicio mensaje recibido");
+            System.out.println("Beggining of the received message.");
             System.out.println(msg);
-            System.out.println("Fin mensaje recibido");
+            System.out.println("End of the received message.");
 
             MapMessage m = (MapMessage) msg;
             if (msg instanceof MapMessage) {

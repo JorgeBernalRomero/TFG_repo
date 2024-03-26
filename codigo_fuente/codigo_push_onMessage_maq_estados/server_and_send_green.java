@@ -1,11 +1,8 @@
 package test;
 
 import java.io.*;
-import java.util.Enumeration;
-
 import javax.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.activemq.command.ActiveMQTextMessage;
 
 
 public class server_and_send implements MessageListener{
@@ -55,13 +52,7 @@ public class server_and_send implements MessageListener{
 			consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"), "", true);
             consumer.setMessageListener((MessageListener) new server_and_send());
 
-			/*for(int i=0; i<100; i++){
-				System.out.println("si");
-				consumer.close();
-			}*/
-
 			setStatus(0);
-
 
 		}
 		catch (Exception e){
@@ -76,7 +67,7 @@ public class server_and_send implements MessageListener{
 	public static void sending(Session session){
 		try{
 
-			System.out.println("estoy dentro del sending");
+			System.out.println("I'm in the sending now!");
 
 			MessageProducer producer = null;
 			Destination destination = session.createQueue("domibus.backend.jms.inQueue");
@@ -111,6 +102,8 @@ public class server_and_send implements MessageListener{
 			messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
 
 			producer.send(messageMap);
+
+			System.out.println("Sending message content is the following!");
 			System.out.println(messageMap);
 
 			setStatus(2);
@@ -127,7 +120,9 @@ public class server_and_send implements MessageListener{
 	@Override
     public void onMessage(Message msg) {
         try {
+            System.out.println("Beggining of the received message.");
             System.out.println(msg);
+            System.out.println("End of the received message.");
 
 			MapMessage m = (MapMessage) msg;
 			if (msg instanceof MapMessage) {
@@ -166,7 +161,6 @@ public class server_and_send implements MessageListener{
 			    System.out.println(msg);
 
 				setStatus(1);
-			    //setStatus(2);
 
 				sending(session);
 			 }

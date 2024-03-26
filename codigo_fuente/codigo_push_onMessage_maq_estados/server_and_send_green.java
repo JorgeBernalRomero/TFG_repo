@@ -1,8 +1,11 @@
 package test;
 
 import java.io.*;
+import java.util.Enumeration;
+
 import javax.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.command.ActiveMQTextMessage;
 
 
 public class server_and_send implements MessageListener{
@@ -210,6 +213,41 @@ public class server_and_send implements MessageListener{
 	public static void main(String[] args){
 
 		starting();
+
+		/*try{
+			//Connecting to the ActiveMQ connection factory
+			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616"); //URL del servidor ActiveMQ
+
+			connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker
+			connection.start();
+
+            QueueSession session = (QueueSession) connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+            Queue queue = session.createQueue("domibus.backend.jms.inQueue");
+            QueueBrowser browser = session.createBrowser(queue);
+
+            Enumeration e = browser.getEnumeration();
+
+            if (e != null) {
+
+                int i = 0;
+                while (e.hasMoreElements()) {
+                    Object msg = e.nextElement();
+                    ActiveMQTextMessage m = (ActiveMQTextMessage) msg;
+                    System.out.println(m.getText());
+                    i++;
+
+                }
+                System.out.println("Nro. Mensajes: " + (i));
+            }
+
+            browser.close();
+            session.close();
+            connection.close();
+
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}*/
 
 	}
 }

@@ -6,7 +6,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 
 public class server_and_send {
-	
+
 	//Class for files management
 	public static class FileManager {
 		public static byte[] readFileAsBytes(File file) throws IOException {
@@ -16,7 +16,7 @@ public class server_and_send {
 				return bytes;
 			}
 		}
-		
+
 		public void writeFileAsBytes(byte[] bytes, String fileName) throws IOException {
 			File file = new File(fileName);
 			try (RandomAccessFile accessFile = new RandomAccessFile(file, "w")){
@@ -27,7 +27,7 @@ public class server_and_send {
 		public static void writeBytesToFile(File receivedFile, byte[] fileBytes) throws IOException {
 			try(FileOutputStream fos = new FileOutputStream(receivedFile)){
 				fos.write(fileBytes);
-			}	
+			}
 		}
 	}
 
@@ -38,13 +38,13 @@ public class server_and_send {
 			MessageConsumer consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"));
 			Message msg = consumer.receive(); //podríamos poner 10000 que serían 10 segundos
 		    System.out.println(msg);
-		    
+
 			MapMessage m = (MapMessage) msg;
 			if (msg instanceof MapMessage) {
 				System.out.println(msg.getJMSMessageID());
 				System.out.println(m.getBytes("payload_1"));
 				System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
-				
+
 				String saveDirectory = "/home/green/TFG/dir_destino_prueba"; //esta parte se podría sustituir pasando el dirDestino por parámetro
 				File saveDir = new File(saveDirectory);
 				if (!saveDir.exists()) {
@@ -61,7 +61,7 @@ public class server_and_send {
         			processBuilder.redirectErrorStream(true);
         			Process process = processBuilder.start();
         			int exitCode = process.waitFor();
-        			
+
         			if(exitCode == 0) {
         				System.out.println("exe correct");
         			}
@@ -74,15 +74,15 @@ public class server_and_send {
         		System.out.println("Got a message: ");
 			    System.out.println(msg);
 			 }
-			
+
 			else{
 			    String payload = "No Message Found!";
 			    System.out.println(payload);
 			}
 
 			System.out.println("fin");
-			
-			
+
+
 			consumer.close();
 
 		}
@@ -99,10 +99,10 @@ public class server_and_send {
 			MessageProducer producer = null;
 			Destination destination = session.createQueue("domibus.backend.jms.inQueue");
 			producer = session.createProducer(destination);
-			
+
 			producer.setDeliveryMode(DeliveryMode.PERSISTENT);
-			MapMessage messageMap = session.createMapMessage();  
-			
+			MapMessage messageMap = session.createMapMessage();
+
 			messageMap.setStringProperty("messageType", "submitMessage");
 			messageMap.setStringProperty("service","bdx:noprocess");
 			messageMap.setStringProperty("serviceType","tc1");
@@ -123,11 +123,11 @@ public class server_and_send {
 			messageMap.setStringProperty("payload_1_mimeContentId", "cid:message");
 			messageMap.setStringProperty("payload_1_mimeType", "text/xml");
 			messageMap.setStringProperty("payload_1_description", "message");
-			
+
 			//Sending a file from one node to another works (testing script)
 			File file = new File("/home/green/TFG/dir_destino_prueba/outScript.txt"); //directorio puede modificarse o por parámetro???
 			messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
-			
+
 			producer.send(messageMap);
 			System.out.println(messageMap);
 		}
@@ -136,12 +136,12 @@ public class server_and_send {
 		}
 	}
 
-	
+
 	//main code
 	public static void main(String[] args){
 		try{
 			//Connecting to the ActiveMQ connection factory
-			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616"); //URL del servidor ActiveMQ
+			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://1.44.4.91:61616"); //URL del servidor ActiveMQ
 			Connection connection = null;
 
 			connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker
@@ -150,7 +150,7 @@ public class server_and_send {
 
 			//Calling function
 			listening(session);
-			
+
 			//Calling function
 			sending(session);
 

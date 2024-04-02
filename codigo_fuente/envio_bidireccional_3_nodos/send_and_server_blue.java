@@ -156,7 +156,7 @@ public class send_and_server {
     public static void main(String[] args){
         try{
             //Connecting to the ActiveMQ connection factory
-            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616"); //URL del servidor ActiveMQ
+            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://1.44.4.88:61616"); //URL del servidor ActiveMQ
             Connection connection = null;
 
             connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker

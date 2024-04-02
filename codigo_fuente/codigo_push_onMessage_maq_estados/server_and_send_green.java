@@ -43,7 +43,7 @@ public class server_and_send implements MessageListener{
 	public static void starting(){
 		try{
 			//Connecting to the ActiveMQ connection factory
-			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616"); //URL del servidor ActiveMQ
+			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://1.44.4.91:61616"); //URL del servidor ActiveMQ
 
 			connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker
 			connection.start();

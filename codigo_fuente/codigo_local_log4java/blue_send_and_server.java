@@ -4,6 +4,9 @@ import java.io.*;
 import javax.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class blue_send_and_server implements MessageListener{
 
@@ -12,8 +15,10 @@ public class blue_send_and_server implements MessageListener{
     static boolean reciboGreen = false;
     static boolean reciboPink = false;
     static Session session;
-	static Connection connection = null;
-	static MessageConsumer consumer;
+	  static Connection connection = null;
+	  static MessageConsumer consumer;
+
+	  private static final Logger logger = LogManager.getLogger(blue_send_and_server.class);
 
 
     //Class for files management
@@ -224,7 +229,10 @@ public class blue_send_and_server implements MessageListener{
     //main code
     public static void main(String[] args){
 
-        starting();
+    	logger.info("Mensaje de información");
+      logger.error("Mensaje de error");
+
+      starting();
 
     }
 }

@@ -5,11 +5,17 @@ import javax.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
 public class green_server_and_send implements MessageListener{
 
 	static Session session;
 	static Connection connection = null;
 	static MessageConsumer consumer;
+
+	private static final Logger logger = LogManager.getLogger(green_server_and_send.class);
 
 
 	//Class for files management
@@ -209,6 +215,9 @@ public class green_server_and_send implements MessageListener{
 
 	//main code
 	public static void main(String[] args){
+
+		logger.info("Mensaje de información");
+    logger.error("Mensaje de error");
 
 		starting();
 

@@ -1,0 +1,54 @@
+El proceso "sender" se lanza manualmente cuando queremos ejecutar un proceso de análisis federado.
+El proceso "receiver", al ser asíncrono, debe estar lanzado permanentemente en los workers, y ejecutar lo que corresponda
+cuando reciben un mensaje. El envío se realizará como resultado de la ejecución de la tarea.
+
+Cualquier nodo puede ser sender y receiver, por lo que el nodo coordinador debe tener también un proceso receiver.
+
+El proceso receiver del coordinador recibirá tanto mensajes desde otros coordinadores como respuestas a las peticiones propias.
+¿Cómo comunicamos los mensajes desde el receiver general del nodo coordinador al receiver del proceso analítico?
+
+De momento, el coordinador solo levantará el receiver asociado al proceso, y no el general.
+
+La máquina de estados, en principio, solo tiene sentido en el coordinador.
+
+Estados de mensaje:
+-pending
+-sent
+-ack
+-received
+-error
+-timeout
+
+Estados de proceso:
+-started
+-partial-sent
+-total-sent
+-partial-received
+-total-received
+-error
+-timeout
+-end
+
+Ejemplo de proceso:
+
+nodes
+    - green
+    - pink
+tasks
+    sql
+        nodes: all
+        query: '...'
+        return: 'csv'
+        timeout: 60
+        ack: true
+    
+    synchro: all
+    
+    script
+        nodes: local
+        script: 'load.sh'
+
+onTimeout: continue
+onError: break
+
+Cambiamos de estado de proceso solo en puntos de sincronización

@@ -1,0 +1,67 @@
+{
+    "commandId" : 198, 
+    "responseRequired" : false,
+    "messageId" : "ID:localhost.localdomain-41139-1710501428130-6: 25: 12: 3: 1",
+    "originalDestination" : null, 
+    "originalTransactionId" : null, 
+    "producerId" : "ID:localhost.localdomain-41139-1710501428130-6: 25: 12: 3", 
+    "destination" : "queue: //domibus.backend.jms.outQueue", 
+    "transactionId" : "TX:ID:localhost.localdomain-41139-1710501428130-6:25:43", 
+    "expiration" : 0, 
+    "timestamp" : 1710750852077, 
+    "arrival" : 0, 
+    "brokerInTime" : 1710750852078, 
+    "brokerOutTime" : 1710750852100,
+    "correlationId" : null, 
+    "replyTo" : null, 
+    "persistent" : true, 
+    "type" : null, 
+    "priority" : 4, 
+    "groupID" : null, 
+    "groupSequence" : 0, 
+    "targetConsumerId" : null, 
+    "compressed" : false, 
+    "userID" : null, 
+    "content" : "org.apache.activemq.util.ByteSequence@38aa9804", 
+    "marshalledProperties" : "org.apache.activemq.util.ByteSequence@366d7161", 
+    "dataStructure" : null, 
+    "redeliveryCounter" : 0, 
+    "size" : 0, 
+    "properties" : {
+        "serviceType":"tc1", 
+        "mpc" : "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC", 
+        "fromPartyId":"domibus-pink", 
+        "DOMAIN" : "default", 
+        "agreementRefType" : null, 
+        "toRole" : "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder", 
+        "originalSender" : "urn:oasis:names:tc:ebcore:partyid-type:unregistered:C1", 
+        "conversationId" : "4cf0d194-e502-11ee-a92f-566ffedf000b@domibus.eu", 
+        "refToMessageId" : null, 
+        "messageId" : "4cefe733-e502-11ee-a92f-566ffedf000b@domibus.eu", 
+        "agreementRef" : null, 
+        "fromPartyType" : "urn:oasis:names:tc:ebcore:partyid-type:unregistered", 
+        "finalRecipient" : "urn:oasis:names:tc:ebcore:partyid-type:unregistered:C4", 
+        "originalQueue" : "domibus.backend.jms.outQueue", 
+        "payload_1_mimeContentId" : "cid:message", 
+        "totalNumberOfPayloads" : 1, 
+        "fromRole" : "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator", 
+        "protocol" : "AS4", 
+        "payload_1_mimeType" : "text/xml", 
+        "toPartyType" : "urn:oasis:names:tc:ebcore:partyid-type:unregistered", 
+        "messageType" : "incomingMessage", 
+        "service" :"bdx:noprocess", 
+        "action" : "TC1Leg1", 
+        "toPartyId" : "domibus-blue"
+    }, 
+    "readOnlyProperties" : true, 
+    "readOnlyBody" : true, 
+    "droppable" : false, 
+    "jmsXGroupFirstForConsumer" : false
+} 
+
+
+ActiveMQMapMessage{ 
+    "theTable" : {
+        "payload_1" :"[B@3252f374"
+    } 
+}

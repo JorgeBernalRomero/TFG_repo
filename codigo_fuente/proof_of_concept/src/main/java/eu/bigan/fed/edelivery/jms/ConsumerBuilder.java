@@ -24,6 +24,11 @@ public class ConsumerBuilder {
 		try {
 			Queue queue = session.createQueue(EnvParameters.getParameter("outQueue"));
 			consumer = session.createConsumer(queue, "", true);
+			
+			
+			//AQUI NO TENDRÍA QUE IR LA SIGUIENTE LÍNEA??
+			//consumer.setMessageListener((MessageListener) new blue_send_and_server());
+			
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}

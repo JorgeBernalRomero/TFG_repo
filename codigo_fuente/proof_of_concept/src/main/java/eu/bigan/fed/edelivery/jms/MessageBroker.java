@@ -24,6 +24,11 @@ public class MessageBroker implements MessageListener {
 
                 String fromNodeID = m.getStringProperty("fromPartyId");
                 System.out.println(fromNodeID);
+                
+                
+                //manejar el payload, qué hago con él???
+                
+                
             } else{
                 String payload = "No Message Found!";
                 System.out.println(payload);

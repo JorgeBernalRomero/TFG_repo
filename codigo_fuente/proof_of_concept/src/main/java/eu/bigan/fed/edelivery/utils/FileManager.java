@@ -7,7 +7,7 @@ import java.io.RandomAccessFile;
 
 /**
  * 
- * @author carlos
+ * @author Jorge Bernal Romero
  *
  */
 public class FileManager{

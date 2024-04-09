@@ -1,4 +1,5 @@
 package eu.bigan.fed.edelivery.utils;
+
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.MissingResourceException;
@@ -7,7 +8,7 @@ import java.util.PropertyResourceBundle;
 
 /**
  * 
- * @author 
+ * @author Jorge Bernal Romero
  *
  */
 public class EnvParameters {

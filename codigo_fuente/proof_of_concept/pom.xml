@@ -64,17 +64,19 @@
 	    <version>5.7.0</version>
 	</dependency>
 	
-	<dependency>
-    	<groupId>ch.qos.logback</groupId>
-    	<artifactId>logback-classic</artifactId>
-   	 	<version>...</version>
-	</dependency>
-	
-	<dependency>
-    	<groupId>org.slf4j</groupId>
-    	<artifactId>slf4j-api</artifactId>
-    	<version>...</version>
-	</dependency>
+	<!-- SLF4J API -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.32</version>
+    </dependency>
+
+    <!-- Implementación de SLF4J (por ejemplo, Logback) -->
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.6</version>
+    </dependency>
 
 
 

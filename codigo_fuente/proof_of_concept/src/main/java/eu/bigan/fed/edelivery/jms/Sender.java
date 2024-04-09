@@ -7,7 +7,8 @@ import eu.bigan.fed.edelivery.utils.FileManager;
 
 
 public class Sender{
-	public static void sending(Session session, String destinationNode){
+	
+	public void sending(Session session, String destinationNode, MessageProducer producer){
         try{
             System.out.println("I'm in the sending now!");
 
@@ -48,7 +49,7 @@ public class Sender{
 
             messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
 
-            producer.send(messageMap); //habrá que llamar al SenderBuilder en algún momento para crear un productor y enviar el mensaje desde el mismo
+            producer.send(messageMap);
            
 
 

@@ -17,13 +17,16 @@ public class SenderBuilder {
 	 */
 	public MessageProducer createProducer(Session session) {
 		MessageProducer producer = null;
+		
 		try {
 			Queue queue = session.createQueue(EnvParameters.getParameter("inQueue"));
 			producer = session.createProducer(queue);
 			producer.setDeliveryMode(DeliveryMode.PERSISTENT);
+			
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}
+		
 		return producer;
 	}
 }

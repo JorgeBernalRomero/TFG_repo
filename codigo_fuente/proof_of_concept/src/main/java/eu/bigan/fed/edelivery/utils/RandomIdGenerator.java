@@ -1,6 +1,5 @@
 package eu.bigan.fed.edelivery.utils;
 
-import java.math.BigInteger;
 import java.security.SecureRandom;
 
 public class RandomIdGenerator {
@@ -8,10 +7,16 @@ public class RandomIdGenerator {
     private static final SecureRandom random = new SecureRandom();
 
     
-    public static int generateRandomId() {
-        byte[] bytes = new byte[4];
-        random.nextBytes(bytes);
-        
-        return new BigInteger(bytes).intValue();
-    }
+    public int generateRandomId() {
+    	  byte[] bytes = new byte[4];
+    	  random.nextBytes(bytes);
+
+    	  int id = 0;
+    	  for (byte b : bytes) {
+    	    id = id << 8 | (b & 0xFF);
+    	  }
+
+    	  return id;
+    	}
+
 }

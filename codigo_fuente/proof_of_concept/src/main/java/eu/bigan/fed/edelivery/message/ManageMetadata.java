@@ -9,19 +9,16 @@ public class ManageMetadata {
     private int idMessage;
     private String origin;
     private String destination;
-    
-    //lo haré un poco más adelante
-    //private MessageCallback callback;
-    
+    private String callback;
     private Timestamp timestamp;
     private int status;
 
     
-    public ManageMetadata(int idMessage, String origin, String destination, Timestamp timestamp, int status) {
+    public ManageMetadata(int idMessage, String origin, String destination, String callback, Timestamp timestamp, int status) {
         this.idMessage = idMessage;
         this.origin = origin;
         this.destination = destination;
-        //this.callback = callback;
+        this.callback = callback;
         this.timestamp = timestamp;
         this.status = status;
     }

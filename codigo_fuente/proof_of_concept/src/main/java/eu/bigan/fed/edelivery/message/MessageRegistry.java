@@ -6,22 +6,22 @@ import java.util.List;
 
 public class MessageRegistry {
 
-    private static List<ManageMetadata> messagesList = new ArrayList<>();
+	private List<ManageMetadata> messagesList = new ArrayList<>();
 
-    public static void addMessage(int idMessage, String origin, String destination, String callback, Timestamp timestamp, int status) {
+    public void addMessage(int idMessage, String origin, String destination, String callback, Timestamp timestamp, int status) {
         ManageMetadata metadata = new ManageMetadata(idMessage, origin, destination, callback, timestamp, status);
         messagesList.add(metadata);
     }
 
-    public static ManageMetadata getMessageFromListById(int idMessage) {
-        return MessageRegistry.messagesList.stream()
+    public ManageMetadata getMessageFromListById(int idMessage) {
+        return messagesList.stream()
                 .filter(m -> m.getIdMessage() == idMessage)
                 .findFirst()
                 .orElse(null);
     }
 
     //esta nos hace falta???
-    public static List<ManageMetadata> getAllMessages() {
+    public List<ManageMetadata> getAllMessages() {
         return new ArrayList<>(messagesList); // Return a copy to avoid modification
     }
 }

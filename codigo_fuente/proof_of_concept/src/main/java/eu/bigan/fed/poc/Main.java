@@ -27,17 +27,18 @@ public class Main {
 	  MessageProducer producer = senderBuilder.createProducer(session);
 	  
 	  
-	  Sender sender = new Sender();
-	  sender.sending(session, "domibus-green", producer);
-	  
 	  //Ahora tengo que añadir a la lista el mensaje que 
 	  RandomIdGenerator randomId = new RandomIdGenerator();
 	  int idMessage = randomId.generateRandomId();
 	  
-	  Timestamp timestamp,
+	  Timestamp timestamp;
 	  
 	  MessageRegistry addingMessage = new MessageRegistry();
-	  addingMessage.addMessage(idMessage, "domibus-blue", "domibus-green", null, 0);
+	  addingMessage.addMessage(idMessage, "domibus-blue", "domibus-green", "saveAsFile()", null, 0);
+	  
+	  
+	  Sender sender = new Sender();
+	  sender.sending(session, "domibus-green", producer);
 	  
 	  
 	  sender.sending(session, "domibus-pink", producer);

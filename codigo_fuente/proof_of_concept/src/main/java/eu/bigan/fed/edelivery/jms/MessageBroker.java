@@ -4,6 +4,8 @@ import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 
+import eu.bigan.fed.edelivery.message.BiganFedListener;
+
 public class MessageBroker implements MessageListener {
 
 	@Override
@@ -27,7 +29,8 @@ public class MessageBroker implements MessageListener {
                 
                 //me voy a la lusta por id, cojo el callback, y al callback que recoja
                 
-                //callback.onMessage(MessageMap jsdh);
+                SaveToFiles callback = new BiganFedListener(); //no está bien, ver cómo lo hago
+                callback.onMessage(m, "domibus-green");
                 
                 //SE ME OCURRE COGER EL CAMPO SET_CORRELATION_ID DE JMS Y USARLO PARA BUSCAR POR ESO EN LA LISTA
                 

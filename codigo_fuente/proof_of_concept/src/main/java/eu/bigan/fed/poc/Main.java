@@ -16,7 +16,7 @@ public class Main {
     
 	  System.out.println("empieza el main");
 	  
-	  SessionBuilder sessionBuilder = new SessionBuilder();
+	  /*SessionBuilder sessionBuilder = new SessionBuilder();
 	  Session session = sessionBuilder.createSession();
 	  
 	  
@@ -41,7 +41,10 @@ public class Main {
 	  sender.sending(session, "domibus-green", producer);
 	  
 	  
-	  sender.sending(session, "domibus-pink", producer);
+	  sender.sending(session, "domibus-pink", producer);*/
+	  
+	  YamlReader readingYaml = new YamlReader();
+	  readingYaml.yamlReading();
 	  
     
   }

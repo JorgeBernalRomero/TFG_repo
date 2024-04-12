@@ -34,7 +34,7 @@ public class Main {
 	  Timestamp timestamp;
 	  
 	  MessageRegistry addingMessage = new MessageRegistry();
-	  addingMessage.addMessage(idMessage, "domibus-blue", "domibus-green", "saveAsFile()", null, 0);
+	  //addingMessage.addMessage(idMessage, "domibus-blue", "domibus-green", "saveAsFile()", null, 0); //modificar
 	  
 	  
 	  Sender sender = new Sender();

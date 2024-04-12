@@ -25,6 +25,12 @@ public class MessageBroker implements MessageListener {
                 String fromNodeID = m.getStringProperty("fromPartyId");
                 System.out.println(fromNodeID);
                 
+                //me voy a la lusta por id, cojo el callback, y al callback que recoja
+                
+                //callback.onMessage(MessageMap jsdh);
+                
+                //SE ME OCURRE COGER EL CAMPO SET_CORRELATION_ID DE JMS Y USARLO PARA BUSCAR POR ESO EN LA LISTA
+                
                 
                 //manejar el payload, qué hago con él???
                 

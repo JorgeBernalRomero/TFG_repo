@@ -8,7 +8,7 @@ public class MessageRegistry {
 
 	private List<ManageMetadata> messagesList = new ArrayList<>();
 
-    public void addMessage(int idMessage, String origin, String destination, String callback, Timestamp timestamp, int status) {
+    public void addMessage(int idMessage, String origin, String destination, BiganFedListener callback, Timestamp timestamp, int status) {
         ManageMetadata metadata = new ManageMetadata(idMessage, origin, destination, callback, timestamp, status);
         messagesList.add(metadata);
     }

@@ -9,12 +9,12 @@ public class ManageMetadata {
     private int idMessage;
     private String origin;
     private String destination;
-    private String callback;
+    private BiganFedListener callback;
     private Timestamp timestamp;
     private int status;
 
     
-    public ManageMetadata(int idMessage, String origin, String destination, String callback, Timestamp timestamp, int status) {
+    public ManageMetadata(int idMessage, String origin, String destination, BiganFedListener callback, Timestamp timestamp, int status) {
         this.idMessage = idMessage;
         this.origin = origin;
         this.destination = destination;

@@ -6,25 +6,23 @@ import java.util.List;
 
 public class ManageMetadata {
 
-    private int idMessage;
-    private String origin;
-    private String destination;
+    private String messageId;
+    private String destNode;
     private BiganFedListener callback;
-    private Timestamp timestamp;
+    private String timestamp;
     private int status;
 
     
-    public ManageMetadata(int idMessage, String origin, String destination, BiganFedListener callback, Timestamp timestamp, int status) {
-        this.idMessage = idMessage;
-        this.origin = origin;
-        this.destination = destination;
+    public ManageMetadata(String messageId, String destNode, BiganFedListener callback, String timestamp, int status) {
+        this.messageId = messageId;
+        this.destNode = destNode;
         this.callback = callback;
         this.timestamp = timestamp;
         this.status = status;
     }
 
 
-	public int getIdMessage() {
-		return idMessage;
+	public String getIdMessage() {
+		return messageId;
 	}
 }

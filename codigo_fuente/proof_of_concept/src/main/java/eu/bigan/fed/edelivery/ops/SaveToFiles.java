@@ -7,16 +7,16 @@ import eu.bigan.fed.edelivery.message.BiganFedListener;
 public class SaveToFiles implements BiganFedListener{
 
   private MapMessage messageMap;
-  private String destinationNode;
+  private String destNode;
 
   // Public no-argument constructor
   public SaveToFiles() {
       // Optional: Initialize any default values for properties here (if needed)
   }
 
-  public SaveToFiles(MapMessage messageMap, String destinationNode) {
+  public SaveToFiles(MapMessage messageMap, String destNode) {
       this.messageMap = messageMap;
-      this.destinationNode = destinationNode;
+      this.destNode = destNode;
   }
 
   @Override

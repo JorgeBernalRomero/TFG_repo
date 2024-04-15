@@ -8,7 +8,7 @@ import eu.bigan.fed.edelivery.utils.FileManager;
 
 public class Sender{
 	
-	public void sending(Session session, MessageProducer producer, String destinationNode, String JMSCorrelationId, String sendingFile){
+	public void sending(Session session, MessageProducer producer, String destinationNode, String messageId, String sendingFile){
         try{
             System.out.println("I'm in the sending now!");
 
@@ -28,7 +28,8 @@ public class Sender{
             messageMap.setStringProperty("originalSender", "urn:oasis:names:tc:ebcore:partyid-type:unregistered:C1");
             messageMap.setStringProperty("finalRecipient", "urn:oasis:names:tc:ebcore:partyid-type:unregistered:C4");
             messageMap.setStringProperty("protocol", "AS4");
-            messageMap.setJMSCorrelationID(JMSCorrelationId); //antes ponía "12345"
+            messageMap.setStringProperty("conversationId", messageId);
+            messageMap.setJMSCorrelationID("12345");
             messageMap.setStringProperty("totalNumberOfPayloads", "1");
 
             //messageMap.setStringProperty("payload_1_mimeContentId", "cid:file-attached");

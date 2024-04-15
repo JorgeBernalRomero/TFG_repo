@@ -25,19 +25,13 @@ public class MessageBroker implements MessageListener {
                 System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
 
                 String fromNodeID = m.getStringProperty("fromPartyId");
-                String JMSCorrelationID = m.getJMSCorrelationID();
                 System.out.println(fromNodeID);
-                System.out.println(JMSCorrelationID); //printea null, que pasa???
                 
+                String messageId = m.getStringProperty("conversationId");
+                System.out.println(messageId);
                 
-                //me voy a la lusta por id, cojo el callback, y al callback que recoja
-                
-         
-                
-                //SE ME OCURRE COGER EL CAMPO SET_CORRELATION_ID DE JMS Y USARLO PARA BUSCAR POR ESO EN LA LISTA
-                
-                
-                //manejar el payload, qué hago con él???
+                //busco en la lista de mensajes por conversationId, y llamo al callback con el payload completo
+               
                 
                 
             } else{

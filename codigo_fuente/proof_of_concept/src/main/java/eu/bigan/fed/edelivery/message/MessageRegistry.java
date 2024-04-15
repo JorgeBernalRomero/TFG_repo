@@ -8,12 +8,12 @@ public class MessageRegistry {
 
 	private List<ManageMetadata> messagesList = new ArrayList<>();
 
-    public void addMessage(int idMessage, String origin, String destination, BiganFedListener callback, Timestamp timestamp, int status) {
-        ManageMetadata metadata = new ManageMetadata(idMessage, origin, destination, callback, timestamp, status);
+    public void addMessage(String idMessage, String destNode, BiganFedListener callback, String timestamp, int status) {
+        ManageMetadata metadata = new ManageMetadata(idMessage, destNode, callback, timestamp, status);
         messagesList.add(metadata);
     }
 
-    public ManageMetadata getMessageFromListById(int idMessage) {
+    public ManageMetadata getMessageFromListById(String idMessage) {
         return messagesList.stream()
                 .filter(m -> m.getIdMessage() == idMessage)
                 .findFirst()

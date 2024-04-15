@@ -29,8 +29,7 @@ public class MessageBroker implements MessageListener {
                 
                 //me voy a la lusta por id, cojo el callback, y al callback que recoja
                 
-                SaveToFiles callback = new BiganFedListener(); //no está bien, ver cómo lo hago
-                callback.onMessage(m, "domibus-green");
+         
                 
                 //SE ME OCURRE COGER EL CAMPO SET_CORRELATION_ID DE JMS Y USARLO PARA BUSCAR POR ESO EN LA LISTA
                 

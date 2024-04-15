@@ -15,8 +15,9 @@ public class SaveToFiles implements BiganFedListener{
 	}
 
 	@Override
-	public void onMessage(MapMessage messageMap) {
+	public void handleCallback(MapMessage messageMap) {
 		//implementar aquí el código
+		System.out.println("estoy dentro del handling callback");
 	}
 	
 }

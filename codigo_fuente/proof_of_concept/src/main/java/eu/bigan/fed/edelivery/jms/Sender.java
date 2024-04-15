@@ -8,7 +8,7 @@ import eu.bigan.fed.edelivery.utils.FileManager;
 
 public class Sender{
 	
-	public void sending(Session session, String destinationNode, MessageProducer producer){
+	public void sending(Session session, MessageProducer producer, String destinationNode, String JMSCorrelationId, String sendingFile){
         try{
             System.out.println("I'm in the sending now!");
 
@@ -28,7 +28,7 @@ public class Sender{
             messageMap.setStringProperty("originalSender", "urn:oasis:names:tc:ebcore:partyid-type:unregistered:C1");
             messageMap.setStringProperty("finalRecipient", "urn:oasis:names:tc:ebcore:partyid-type:unregistered:C4");
             messageMap.setStringProperty("protocol", "AS4");
-            messageMap.setJMSCorrelationID("12345");
+            messageMap.setJMSCorrelationID(JMSCorrelationId); //antes ponía "12345"
             messageMap.setStringProperty("totalNumberOfPayloads", "1");
 
             //messageMap.setStringProperty("payload_1_mimeContentId", "cid:file-attached");
@@ -36,23 +36,12 @@ public class Sender{
             messageMap.setStringProperty("payload_1_mimeType", "text/xml");
             messageMap.setStringProperty("payload_1_description", "message");
 
-			File file = null;
-
-            switch(destinationNode) {
-                case "domibus-green":
-                    file = new File("/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/ficheros_comunicacion/blueNode/envioScripts/script_green.sh"); //directorio puede modificarse o por parámetro???
-                    break;
-                case "domibus-pink":
-                    file = new File("/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/ficheros_comunicacion/blueNode/envioScripts/script_pink.sh"); //directorio puede modificarse o por parámetro???
-                    break;
-            }
+			File file = new File(sendingFile);
 
             messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
 
             producer.send(messageMap);
            
-
-
             System.out.println("Sending message content is the following!");
             System.out.println(messageMap);
         }
@@ -60,5 +49,4 @@ public class Sender{
             e.printStackTrace();
         }
     }
-
 }

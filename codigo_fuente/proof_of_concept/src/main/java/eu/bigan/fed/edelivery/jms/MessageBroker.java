@@ -25,7 +25,10 @@ public class MessageBroker implements MessageListener {
                 System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
 
                 String fromNodeID = m.getStringProperty("fromPartyId");
+                String JMSCorrelationID = m.getJMSCorrelationID();
                 System.out.println(fromNodeID);
+                System.out.println(JMSCorrelationID); //printea null, que pasa???
+                
                 
                 //me voy a la lusta por id, cojo el callback, y al callback que recoja
                 

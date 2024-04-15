@@ -17,7 +17,7 @@ public class Main {
 
   public static void main(String[] args) {
 	  
-	  /*SessionBuilder sessionBuilder = new SessionBuilder();
+	  SessionBuilder sessionBuilder = new SessionBuilder();
 	  Session session = sessionBuilder.createSession();
 	  
 	  
@@ -27,36 +27,53 @@ public class Main {
 	  SenderBuilder senderBuilder = new SenderBuilder();
 	  MessageProducer producer = senderBuilder.createProducer(session);
 	  
-	  
-	  //Ahora tengo que añadir a la lista el mensaje que 
-	  RandomIdGenerator randomId = new RandomIdGenerator();
-	  int idMessage = randomId.generateRandomId();
-	  
-	  Timestamp timestamp;
-	  
-	  MessageRegistry addingMessage = new MessageRegistry();
-	  //addingMessage.addMessage(idMessage, "domibus-blue", "domibus-green", "saveAsFile()", null, 0); //modificar
-	  
-	  
 	  Sender sender = new Sender();
-	  sender.sending(session, "domibus-green", producer);
-	  
-	  
-	  sender.sending(session, "domibus-pink", producer);*/
-	  
-	  MapMessage messageMap = null;
-	  
 	  
 	  YamlReader yamlReader = new YamlReader();
       List<String[]> processList = yamlReader.yamlReading();
       
+      //crear la lista de mensajes vacía, debería de ser la estructura MessageRegistry
+      
       if(!processList.isEmpty()) {
 
 		  // Print the processList
-		  /*for (int i = 0; i < processList.size(); i++) {
-		    String[] process = processList.get(i);
+		  for (int i = 0; i < 1 ; i++) { //processList.size() en vez de 1
+			  String[] process = processList.get(i);
 		      System.out.println("processList[" + i + "] = (" + process[0] + ", " + process[1] + ", " + process[2] + ", " + process[3] + ")");
-		  }*/
+		      
+		      String destinationNode = process[0];
+		      String JMSCorrelationId = process[1];
+		      String sendingFile = process[2];
+		      
+		      //aquí tengo que añadir un nuevo mensaje al array de arrays de mensajes (MessageRegistry)
+		      
+		      
+		      sender.sending(session, producer, destinationNode, JMSCorrelationId, sendingFile);
+		      
+		      
+		      
+		      MapMessage messageMap = null;
+		      
+		  }
+    	  
+    	  
+    	  
+    	  
+    	//Ahora tengo que añadir a la lista el mensaje que 
+    	  /*RandomIdGenerator randomId = new RandomIdGenerator();
+    	  int idMessage = randomId.generateRandomId();
+    	  
+    	  Timestamp timestamp;
+    	  
+    	  MessageRegistry addingMessage = new MessageRegistry();
+    	  //addingMessage.addMessage(idMessage, "domibus-blue", "domibus-green", "saveAsFile()", null, 0); //modificar
+    	  
+    	  
+    	  Sender sender = new Sender();
+    	  sender.sending(session, "domibus-green", producer);
+    	  
+    	  
+    	  sender.sending(session, "domibus-pink", producer);*/
 		  
     	  
     	  

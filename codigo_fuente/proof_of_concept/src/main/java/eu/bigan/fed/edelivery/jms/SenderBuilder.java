@@ -5,7 +5,6 @@ import javax.jms.DeliveryMode;
 import javax.jms.JMSException;
 import javax.jms.MessageProducer;
 import javax.jms.Queue;
-
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 
 public class SenderBuilder {

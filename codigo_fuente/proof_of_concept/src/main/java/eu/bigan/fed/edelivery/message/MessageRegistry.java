@@ -4,22 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageRegistry {
-
-	private List<ManageMetadata> messagesList = new ArrayList<>();
+	
+	private static MessageRegistry messageRegistry = new MessageRegistry();
+	private List<ManageMetadata> messagesList;
+	
+	private MessageRegistry() {
+		messagesList = new ArrayList<>();
+	}
+	
+	
+	public static MessageRegistry getInstance() {
+        return messageRegistry;
+    }
 
 	
     public void addMessage(String messageId, String destNode, BiganFedListener callback, String timestamp, int status) {
         ManageMetadata metadata = new ManageMetadata(messageId, destNode, callback, timestamp, status);
         messagesList.add(metadata);
     }
-
+    
     
     public ManageMetadata getMessageFromListById(String messageId) {
-        return messagesList.stream()
-                .filter(m -> m.getMessageId() == messageId)
-                .findFirst()
-                .orElse(null);
+        for (ManageMetadata metadata : messagesList) {
+            if (metadata.getMessageId().equals(messageId)) {
+                return metadata;
+            }
+        }
+        return null;
     }
+
     
     
     public List<String[]> listConversionToString(List<ManageMetadata> list) {

@@ -2,7 +2,6 @@ package eu.bigan.fed.edelivery.jms;
 
 import java.io.File;
 import javax.jms.*;
-
 import eu.bigan.fed.edelivery.utils.FileManager;
 
 

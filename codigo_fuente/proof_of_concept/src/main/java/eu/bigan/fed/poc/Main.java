@@ -15,8 +15,10 @@ public class Main {
 	  SessionBuilder sessionBuilder = new SessionBuilder();
 	  Session session = sessionBuilder.createSession();
 	  
+	  MessageRegistry messageRegistry = MessageRegistry.getInstance();
+	  
 	  ConsumerBuilder consumerBuilder = new ConsumerBuilder();
-	  consumerBuilder.createConsumer(session);
+	  consumerBuilder.createConsumer(session, messageRegistry);
 	  
 	  SenderBuilder senderBuilder = new SenderBuilder();
 	  MessageProducer producer = senderBuilder.createProducer(session);
@@ -25,9 +27,7 @@ public class Main {
 	  
 	  YamlReader yamlReader = new YamlReader();
       List<String[]> processList = yamlReader.yamlReading();
-      
-      
-      MessageRegistry addingMessage = new MessageRegistry();
+
       
       if(!processList.isEmpty()) {
 
@@ -53,13 +53,15 @@ public class Main {
 		      String timestamp = getTimeStamp.gettingTimeStamp();
 		      int status = 0;
 		      
-		      //callback tiene que ser de tipo BiganFedListener...
-		      addingMessage.addMessage(messageId, destNode, callback, timestamp, status);
+		      //Esta línea me añade un nuevo mensaje a la lista
+		      messageRegistry.addMessage(messageId, destNode, callback, timestamp, status);
 		      
-		      List<ManageMetadata> fullList = addingMessage.getAllMessages();
 		      
-		      List<String[]> showingList = addingMessage.listConversionToString(fullList);
 		      
+		      //Las siguientes líneas sirven para mostrar todos los mensajes que hay en la lista
+		      List<ManageMetadata> fullList = messageRegistry.getAllMessages();
+		      
+		      List<String[]> showingList = messageRegistry.listConversionToString(fullList);
 		      
 		      for (int j = 0; j < showingList.size(); j++) {
 		    	  String[] procesos = showingList.get(j);
@@ -68,30 +70,9 @@ public class Main {
 		      }
 		      
 		      
-		      //sender.sending(session, producer, destNode, messageId, sendingFile);
-		      
-		      
-		      
-		      //MapMessage messageMap = null;
+		      sender.sending(session, producer, destNode, messageId, sendingFile);
 		      
 		 }
       }
    }
 }
-
-
-/* String callbackClassName = (String) process[3];
-
-System.out.println(callbackClassName); //esto contiene SaveToFiles, habría que meterlo abajo en vez de hardcodearlo
-
-
-//ESTO FUNCIONA CORRECTAMENTE Y ME PERMITE LLEGAR A LA FUNCIÓN DE HANDLING CALLBACK (EL PROBLEMA ES QUE NO DEBERÍA HARDCODEAR EL "SaveToFiles")
-try {
-    Class<SaveToFiles> callbackClass = SaveToFiles.class;
-    BiganFedListener callback = callbackClass.newInstance();
-    callback.handleCallback(messageMap);
-
-} 
-catch (Exception e){
-        e.printStackTrace();
-}*/

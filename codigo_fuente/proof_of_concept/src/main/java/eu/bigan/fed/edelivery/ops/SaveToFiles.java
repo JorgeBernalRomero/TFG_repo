@@ -1,7 +1,6 @@
 package eu.bigan.fed.edelivery.ops;
 
 import javax.jms.MapMessage;
-
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 
 public class SaveToFiles implements BiganFedListener{
@@ -23,6 +22,11 @@ public class SaveToFiles implements BiganFedListener{
   public void handleCallback(MapMessage messageMap) {
       // Implement code for handling the message here
       System.out.println("estoy dentro del handling callback");
+      
+      
+      //me llega el mensaje entero, tengo que guardar el mensaje correctamente, AQUÍ ME QUEDO
+      
+      
   }
 
 }

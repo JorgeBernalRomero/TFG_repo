@@ -1,9 +1,5 @@
 package eu.bigan.fed.edelivery.message;
 
-import java.security.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-
 public class ManageMetadata {
 
     private String messageId;
@@ -22,7 +18,23 @@ public class ManageMetadata {
     }
 
 
-	public String getIdMessage() {
+	public String getMessageId() {
 		return messageId;
+	}
+	
+	public String getDestNode() {
+		return destNode;
+	}
+	
+	public BiganFedListener getCallback() {
+		return callback;
+	}
+	
+	public String getTimestamp() {
+		return timestamp;
+	}
+	
+	public int getStatus() {
+		return status;
 	}
 }

@@ -36,6 +36,8 @@ public class SaveToFiles implements BiganFedListener{
 	
 	          String fromNodeID = m.getStringProperty("fromPartyId");
 	          System.out.println(fromNodeID);
+	          
+	          String messageId = m.getStringProperty("conversationId");
 	
 			  String saveDirectory = "";
 			  
@@ -48,6 +50,8 @@ public class SaveToFiles implements BiganFedListener{
 	                  saveDirectory = "/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/blueNode/receivedResults/pinkResults";    
 	                  break;
 	          }
+	          
+	          saveDirectory = saveDirectory + "/" + messageId;
 	
 	          File saveDir = new File(saveDirectory);
 	          if (!saveDir.exists()) {

@@ -61,22 +61,3 @@ public class MessageBroker implements MessageListener {
 	}
 
 }
-
-
-
-
-/* String callbackClassName = (String) process[3];
-
-System.out.println(callbackClassName); //esto contiene SaveToFiles, habría que meterlo abajo en vez de hardcodearlo
-
-
-//ESTO FUNCIONA CORRECTAMENTE Y ME PERMITE LLEGAR A LA FUNCIÓN DE HANDLING CALLBACK (EL PROBLEMA ES QUE NO DEBERÍA HARDCODEAR EL "SaveToFiles")
-try {
-    Class<SaveToFiles> callbackClass = SaveToFiles.class;
-    BiganFedListener callback = callbackClass.newInstance();
-    callback.handleCallback(messageMap);
-
-} 
-catch (Exception e){
-        e.printStackTrace();
-}*/

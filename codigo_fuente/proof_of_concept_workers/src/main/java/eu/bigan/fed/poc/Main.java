@@ -12,7 +12,7 @@ public class Main {
 
   public static void main(String[] args) {
 	  
-	  System.out.println("hola estoy en el main del coord");
+	  System.out.println("hola estoy en el main de los workers");
 	  
 	  SessionBuilder sessionBuilder = new SessionBuilder();
 	  Session session = sessionBuilder.createSession();

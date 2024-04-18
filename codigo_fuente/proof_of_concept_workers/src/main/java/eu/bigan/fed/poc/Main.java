@@ -11,21 +11,25 @@ import eu.bigan.fed.edelivery.utils.*;
 public class Main {
 
   public static void main(String[] args) {
+	System.out.println("hola estoy en el main de los workers");
 	  
-	  System.out.println("hola estoy en el main de los workers");
-	  
-	  SessionBuilder sessionBuilder = new SessionBuilder();
-	  Session session = sessionBuilder.createSession();
-	  
-	  MessageRegistry messageRegistry = MessageRegistry.getInstance();
-	  
-	  ConsumerBuilder consumerBuilder = new ConsumerBuilder();
-	  consumerBuilder.createConsumer(session, messageRegistry);
-	  
-	  SenderBuilder senderBuilder = new SenderBuilder();
-	  MessageProducer producer = senderBuilder.createProducer(session);
-	  
-	  Sender sender = new Sender();
+	SessionBuilder sessionBuilder = new SessionBuilder();
+	Session session = sessionBuilder.createSession();
+	
+	MessageRegistry messageRegistry = MessageRegistry.getInstance();
+	
+	ConsumerBuilder consumerBuilder = new ConsumerBuilder();
+	consumerBuilder.createConsumer(session, messageRegistry);
+	
+	SenderBuilder senderBuilder = new SenderBuilder();
+	MessageProducer producer = senderBuilder.createProducer(session);
+	
+	Sender sender = new Sender();
+
+
+	//A partir de aquí tengo que empezar a cambiar el código para los workers
+	
+
 	  
 	  YamlReader yamlReader = new YamlReader();
       List<String[]> processList = yamlReader.yamlReading();

@@ -31,7 +31,7 @@ public class Main {
       
       if(!processList.isEmpty()) {
 
-		  for (int i = 0; i < 1 ; i++) { //processList.size() en vez de 1
+		  for (int i = 0; i < processList.size() ; i++) { //recorre la lista de procesos, que contiene lo que ha leído del .yaml
 			  String[] process = processList.get(i);
 		      System.out.println("processList[" + i + "] = (" + process[0] + ", " + process[1] + ", " + process[2] + ", " + process[3] + ")");
 		      
@@ -53,26 +53,25 @@ public class Main {
 		      String timestamp = getTimeStamp.gettingTimeStamp();
 		      int status = 0;
 		      
-		      //Esta línea me añade un nuevo mensaje a la lista
+		      //Esta línea me añade un nuevo mensaje a la lista de mensajes
 		      messageRegistry.addMessage(messageId, destNode, callback, timestamp, status);
 		      
 		      
-		      
-		      //Las siguientes líneas sirven para mostrar todos los mensajes que hay en la lista
-		      List<ManageMetadata> fullList = messageRegistry.getAllMessages();
-		      
-		      List<String[]> showingList = messageRegistry.listConversionToString(fullList);
-		      
-		      for (int j = 0; j < showingList.size(); j++) {
-		    	  String[] procesos = showingList.get(j);
-		    	  
-		    	  System.out.println("procesos[" + i + "] = (" + procesos[0] + ", " + procesos[1] + ", " + procesos[2] + ", " + procesos[3] + ", " + procesos[4] + ")");
-		      }
-		      
-		      
-		      sender.sending(session, producer, destNode, messageId, sendingFile);
+		      //envío el mensaje que toca
+		      //sender.sending(session, producer, destNode, messageId, sendingFile);
 		      
 		 }
+		  
+		//Las siguientes líneas sirven para mostrar todos los mensajes que hay en la lista
+	      List<ManageMetadata> fullList = messageRegistry.getAllMessages();
+	      
+	      List<String[]> showingList = messageRegistry.listConversionToString(fullList);
+	      
+	      for (int j = 0; j < showingList.size(); j++) {
+	    	  String[] procesos = showingList.get(j);
+	    	  
+	    	  System.out.println("procesos[" + j + "] = (" + procesos[0] + ", " + procesos[1] + ", " + procesos[2] + ", " + procesos[3] + ", " + procesos[4] + ")");
+	      }
       }
    }
 }

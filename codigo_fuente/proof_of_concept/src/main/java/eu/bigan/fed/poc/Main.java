@@ -35,13 +35,14 @@ public class Main {
 
 		  for (int i = 0; i < processList.size() ; i++) { //recorre la lista de procesos, que contiene lo que ha leído del .yaml
 			  String[] process = processList.get(i);
-		      System.out.println("processList[" + i + "] = (" + process[0] + ", " + process[1] + ", " + process[2] + ", " + process[3] + ")");
+		      System.out.println("processList[" + i + "] = (" + process[0] + ", " + process[1] + ", " + process[2] + ", " + process[3] + ", " + process[4] + ")");
 		      
 		      String destNode = process[0];
 		      String messageId = process[1];
 		      String sendingFile = process[2];
+		      String workerTask = process[3];
 		      
-		      String callbackClassName = process[3];
+		      String callbackClassName = process[4];
 		      BiganFedListener callback = null;
 		      
 		      try {
@@ -60,7 +61,7 @@ public class Main {
 		      
 		      
 		      //envío el mensaje que toca
-		      //sender.sending(session, producer, destNode, messageId, sendingFile);
+		      sender.sending(session, producer, destNode, messageId, sendingFile, workerTask);
 		      
 		 }
 		  

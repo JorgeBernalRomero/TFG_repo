@@ -39,7 +39,7 @@ public class Main {
 		      
 		      String destNode = process[0];
 		      String messageId = process[1];
-		      String sendingFile = process[2];
+		      String taskContent = process[2];
 		      String workerTask = process[3];
 		      
 		      String callbackClassName = process[4];
@@ -56,12 +56,17 @@ public class Main {
 		      String timestamp = getTimeStamp.gettingTimeStamp();
 		      int status = 0;
 		      
+		      
 		      //Esta línea me añade un nuevo mensaje a la lista de mensajes
 		      messageRegistry.addMessage(messageId, destNode, callback, timestamp, status);
 		      
 		      
+		      JsonGenerator jsonGenerator = new JsonGenerator();
+		      String sendingPayload = jsonGenerator.generateJson(workerTask, taskContent);
+		      
+		      
 		      //envío el mensaje que toca
-		      sender.sending(session, producer, destNode, messageId, sendingFile, workerTask);
+		      sender.sending(session, producer, destNode, messageId, sendingPayload); //hay que dividir esto, necesito simplemente pasarle un .json
 		      
 		 }
 		  

@@ -7,7 +7,7 @@ import eu.bigan.fed.edelivery.utils.FileManager;
 
 public class Sender{
 	
-	public void sending(Session session, MessageProducer producer, String destinationNode, String messageId, String sendingFile, String workerTask){
+	public void sending(Session session, MessageProducer producer, String destinationNode, String messageId, String sendingPayload){
         try{
             System.out.println("I'm in the sending now!");
 
@@ -37,7 +37,7 @@ public class Sender{
             messageMap.setStringProperty("payload_1_mimeType", "text/xml");
             messageMap.setStringProperty("payload_1_description", "message");
 
-			File file = new File(sendingFile);
+			File file = new File(sendingPayload);
 
             messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
 

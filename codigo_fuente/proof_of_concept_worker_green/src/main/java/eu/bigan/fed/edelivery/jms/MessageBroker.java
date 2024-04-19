@@ -28,6 +28,8 @@ public class MessageBroker implements MessageListener {
                 
                 String messageId = m.getStringProperty("conversationId");
                 System.out.println(messageId);
+
+                //habrá que leer en la recepción un payload que sera un .json
                 
                 //busco en la lista de mensajes por conversationId, y llamo al callback con el payload completo
 				/*ManageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);

@@ -33,12 +33,12 @@ public class YamlReader {
                             if (action instanceof java.util.Map) {
                                 java.util.Map<String, Object> actionMap = (java.util.Map<String, Object>) action;
                                 String actionName = (String) actionMap.get("name");
-                                String script = (String) actionMap.get("script");
+                                String taskContent = (String) actionMap.get("taskContent");
                                 String workerTask = (String) actionMap.get("worker_task");
                                 String callback = (String) actionMap.get("callback");
 
                                 // Create a String array for each process and add to processList
-                                String[] process = new String[]{workerName, actionName, script, workerTask, callback};
+                                String[] process = new String[]{workerName, actionName, taskContent, workerTask, callback};
                                 processList.add(process);
                             }
                         }

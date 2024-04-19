@@ -29,8 +29,6 @@ public class Sender{
             messageMap.setStringProperty("protocol", "AS4");
             messageMap.setStringProperty("conversationId", messageId);
             
-            messageMap.setStringProperty("workerTask_id", workerTask);
-            
             messageMap.setJMSCorrelationID("12345");
             messageMap.setStringProperty("totalNumberOfPayloads", "1");
 

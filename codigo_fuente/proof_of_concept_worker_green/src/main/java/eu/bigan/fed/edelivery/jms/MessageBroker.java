@@ -4,16 +4,8 @@ import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
-import eu.bigan.fed.edelivery.message.ManageMetadata;
-import eu.bigan.fed.edelivery.message.MessageRegistry;
 
 public class MessageBroker implements MessageListener {
-	
-	MessageRegistry messageRegistry;
-	
-	public MessageBroker(MessageRegistry messageRegistry) {
-		this.messageRegistry =  messageRegistry;
-	}
 
 	@Override
 	public void onMessage(Message msg) {
@@ -38,14 +30,14 @@ public class MessageBroker implements MessageListener {
                 System.out.println(messageId);
                 
                 //busco en la lista de mensajes por conversationId, y llamo al callback con el payload completo
-				ManageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);
+				/*ManageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);
                 
 				if (coincidence != null) {
 					BiganFedListener callback = coincidence.getCallback();
 					callback.handleCallback(m);
 				} else {
 					System.out.println("Message with id " + messageId + " not found in registry");
-				}
+				}*/
  
                 
             } else{

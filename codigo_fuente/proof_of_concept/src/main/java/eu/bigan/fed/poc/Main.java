@@ -33,7 +33,7 @@ public class Main {
       
       if(!processList.isEmpty()) {
 
-		  for (int i = 0; i < processList.size() ; i++) { //recorre la lista de procesos, que contiene lo que ha leído del .yaml
+		  for (int i = 0; i < 1 ; i++) { //processList.size()
 			  String[] process = processList.get(i);
 		      System.out.println("processList[" + i + "] = (" + process[0] + ", " + process[1] + ", " + process[2] + ", " + process[3] + ", " + process[4] + ")");
 		      

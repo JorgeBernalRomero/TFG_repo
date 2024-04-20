@@ -55,18 +55,17 @@ public class MessageBroker implements MessageListener {
                 System.out.println(workerTask);
 
                 //ahora hay que llamar a la función de callback que me hace lo que yo quiero
-            
-                
-                //busco en la lista de mensajes por conversationId, y llamo al callback con el payload completo
-				/*ManageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);
-                
-				if (coincidence != null) {
-					BiganFedListener callback = coincidence.getCallback();
-					callback.handleCallback(m);
-				} else {
-					System.out.println("Message with id " + messageId + " not found in registry");
-				}*/
- 
+                String callbackClassName = workerTask;
+		        BiganFedListener callback = null;
+		      
+                try {
+                    Class<?> callbackClass = Class.forName(callbackClassName);
+                    callback = (BiganFedListener) callbackClass.newInstance();
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+
+                callback.handleCallback(taskContent, messageId); //pasarle tb task1_green
                 
             } else{
                 String payload = "No Message Found!";

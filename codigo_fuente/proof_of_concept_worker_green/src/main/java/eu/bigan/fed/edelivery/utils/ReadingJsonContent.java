@@ -6,7 +6,6 @@ import java.nio.file.*;
 
 public class ReadingJsonContent {
 
-    // Class variables to store extracted values
     private static String taskContent;
     private static String workerTask;
 

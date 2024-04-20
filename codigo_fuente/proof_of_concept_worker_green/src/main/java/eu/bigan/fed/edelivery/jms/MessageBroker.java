@@ -1,9 +1,11 @@
 package eu.bigan.fed.edelivery.jms;
 
+import java.io.File;
 import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
+import eu.bigan.fed.edelivery.utils.*;
 
 public class MessageBroker implements MessageListener {
 
@@ -29,7 +31,31 @@ public class MessageBroker implements MessageListener {
                 String messageId = m.getStringProperty("conversationId");
                 System.out.println(messageId);
 
-                //habrá que leer en la recepción un payload que sera un .json
+                String greenDestDir = EnvParameters.getParameter("greenDestDir");
+
+                String saveDir = greenDestDir + "/" + messageId;
+
+                //crer un nuevo saveDir
+                File finalDir = new File(saveDir);
+				if (!finalDir.exists()) {
+        			finalDir.mkdirs();
+                }
+
+                File destinationFile = new File(finalDir, "payload_1");
+				FileManager.writeBytesToFile(destinationFile, m.getBytes("payload_1"));
+        		System.out.println("File saved to: " + destinationFile.getAbsolutePath());
+
+                ReadingJsonContent reader = new ReadingJsonContent();
+                reader.readingJsonContentFromFile(destinationFile.getAbsolutePath());
+
+                String taskContent = reader.getTaskContent();
+                String workerTask = reader.getWorkerTask();
+
+                System.out.println(taskContent);
+                System.out.println(workerTask);
+
+                //ahora hay que llamar a la función de callback que me hace lo que yo quiero
+            
                 
                 //busco en la lista de mensajes por conversationId, y llamo al callback con el payload completo
 				/*ManageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);

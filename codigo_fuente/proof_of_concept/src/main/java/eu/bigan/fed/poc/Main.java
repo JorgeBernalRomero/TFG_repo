@@ -1,5 +1,6 @@
 package eu.bigan.fed.poc;
 
+import java.io.File;
 import java.util.List;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
@@ -62,11 +63,12 @@ public class Main {
 		      
 		      
 		      JsonGenerator jsonGenerator = new JsonGenerator();
-		      String sendingPayload = jsonGenerator.generateJson(workerTask, taskContent);
+		      String sendingPayload = jsonGenerator.generateJson(workerTask, taskContent, messageId);
 		      
+		      System.out.println(sendingPayload);
 		      
 		      //envío el mensaje que toca
-		      sender.sending(session, producer, destNode, messageId, sendingPayload); //hay que dividir esto, necesito simplemente pasarle un .json
+		      sender.sending(session, producer, destNode, messageId, sendingPayload);
 		      
 		 }
 		  

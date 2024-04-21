@@ -5,6 +5,7 @@ import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
+import eu.bigan.fed.edelivery.message.ReturnMetadata;
 import eu.bigan.fed.edelivery.utils.*;
 
 public class MessageBroker implements MessageListener {
@@ -25,11 +26,13 @@ public class MessageBroker implements MessageListener {
                 System.out.println(m.getBytes("payload_1"));
                 System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
 
-                String fromNodeID = m.getStringProperty("fromPartyId");
+                String fromNodeID = m.getStringProperty("fromPartyId");    
                 System.out.println(fromNodeID);
+                ReturnMetadata.setDestNode(fromNodeID);
                 
                 String messageId = m.getStringProperty("conversationId");
                 System.out.println(messageId);
+                ReturnMetadata.setMessageId(messageId);
 
                 String greenDestDir = EnvParameters.getParameter("greenDestDir");
 
@@ -65,7 +68,8 @@ public class MessageBroker implements MessageListener {
                     e.printStackTrace();
                 }
 
-                callback.handleCallback(taskContent, messageId); //pasarle tb task1_green
+                callback.handleCallback(taskContent, messageId);
+        
                 
             } else{
                 String payload = "No Message Found!";

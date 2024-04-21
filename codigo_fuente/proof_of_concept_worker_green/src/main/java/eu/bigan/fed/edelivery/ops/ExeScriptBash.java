@@ -2,9 +2,7 @@ package eu.bigan.fed.edelivery.ops;
 
 import java.io.File;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
-import eu.bigan.fed.edelivery.utils.EnvParameters;
-import eu.bigan.fed.edelivery.utils.FileManager;
-
+import eu.bigan.fed.edelivery.utils.*;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 
 public class ExeScriptBash implements BiganFedListener{
@@ -54,10 +52,8 @@ public class ExeScriptBash implements BiganFedListener{
             e.printStackTrace();
         }
 
+        StatusManager.setStatus(1);
+
         System.out.println("termina funcion de callback");
-
-        //ME QUEDO AQUÍ --> TOCARÍA HACER EL ENVÍO DE VUELTA DE LOS RESULTADOS...
-
-        //sending(session);
     }
 }

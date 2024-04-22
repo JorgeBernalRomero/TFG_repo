@@ -1,5 +1,7 @@
 package eu.bigan.fed.poc;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import eu.bigan.fed.edelivery.jms.*;
@@ -25,7 +27,12 @@ public class Main {
 	
 	//espera activa hasta que se realice correctamente la función de callback
 	while(StatusManager.getStatus() !=1){
-		
+		// Wait for 2 seconds before checking again
+		try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	SenderBuilder senderBuilder = new SenderBuilder();
@@ -38,7 +45,6 @@ public class Main {
 	sender.sending(session, producer, destinationNode, messageId);
 
 	System.out.println("termina el worker green");
-
 
    }
 }

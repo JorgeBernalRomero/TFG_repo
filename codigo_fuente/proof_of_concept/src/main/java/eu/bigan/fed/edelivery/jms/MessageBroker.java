@@ -7,6 +7,7 @@ import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.message.ManageMetadata;
 import eu.bigan.fed.edelivery.message.MessageRegistry;
 
+
 public class MessageBroker implements MessageListener {
 	
 	MessageRegistry messageRegistry;
@@ -37,7 +38,6 @@ public class MessageBroker implements MessageListener {
                 String messageId = m.getStringProperty("conversationId");
                 System.out.println(messageId);
                 
-                //busco en la lista de mensajes por conversationId, y llamo al callback con el payload completo
 				ManageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);
                 
 				if (coincidence != null) {

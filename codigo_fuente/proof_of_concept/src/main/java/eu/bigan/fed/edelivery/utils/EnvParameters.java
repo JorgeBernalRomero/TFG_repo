@@ -6,13 +6,8 @@ import java.util.MissingResourceException;
 import java.util.Properties;
 import java.util.PropertyResourceBundle;
 
-/**
- * 
- * @author Jorge Bernal Romero
- *
- */
-public class EnvParameters {
 
+public class EnvParameters {
 
 	/**
 	 * Fichero de properties del entorno Midas de la aplicacion

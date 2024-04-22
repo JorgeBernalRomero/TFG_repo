@@ -1,5 +1,6 @@
 package eu.bigan.fed.edelivery.utils;
 
+
 public class StatusManager {
 
     private static int statusId;

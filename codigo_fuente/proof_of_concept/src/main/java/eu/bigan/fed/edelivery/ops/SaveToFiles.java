@@ -39,15 +39,17 @@ public class SaveToFiles implements BiganFedListener{
 	          
 	          String messageId = m.getStringProperty("conversationId");
 	
-			  String saveDirectory = "";
+			  String blueDirRecFromGreen=EnvParameters.getParameter("blueDirRecFromGreen");
+			  String blueDirRecFromPink=EnvParameters.getParameter("blueDirRecFromPink");
 			  
+			  String saveDirectory = "";
 	
 	          switch(fromNodeID) {
 	              case "domibus-green":
-	                  saveDirectory = "/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/blueNode/receivedResults/greenResults";
+	                  saveDirectory = blueDirRecFromGreen;
 	                  break;
 	              case "domibus-pink":
-	                  saveDirectory = "/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/blueNode/receivedResults/pinkResults";    
+	                  saveDirectory = blueDirRecFromPink;    
 	                  break;
 	          }
 	          
@@ -70,4 +72,5 @@ public class SaveToFiles implements BiganFedListener{
           e.printStackTrace();
       }
    }
+  
 }

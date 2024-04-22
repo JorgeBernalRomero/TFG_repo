@@ -32,7 +32,6 @@ public class MessageRegistry {
         }
         return null;
     }
-
     
     
     public List<String[]> listConversionToString(List<ManageMetadata> list) {
@@ -55,6 +54,7 @@ public class MessageRegistry {
 
 
     public List<ManageMetadata> getAllMessages() {
-        return new ArrayList<>(messagesList); // Return a copy to avoid modification
+        return new ArrayList<>(messagesList);
     }
+    
 }

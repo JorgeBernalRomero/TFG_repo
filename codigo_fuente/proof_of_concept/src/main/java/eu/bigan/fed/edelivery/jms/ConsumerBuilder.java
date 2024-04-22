@@ -8,18 +8,9 @@ import javax.jms.Queue;
 import eu.bigan.fed.edelivery.message.MessageRegistry;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 
-/**
- * 
- * @author Jorge Bernal Romero
- *
- */
+
 public class ConsumerBuilder {
 
-	/**
-	 * 
-	 * @param session
-	 * @return
-	 */
 	public MessageConsumer createConsumer(Session session, MessageRegistry messageRegistry) {
 		MessageConsumer consumer = null;
 		

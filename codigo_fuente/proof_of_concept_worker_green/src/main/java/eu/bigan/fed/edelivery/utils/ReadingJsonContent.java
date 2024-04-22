@@ -4,11 +4,11 @@ import org.json.*;
 import java.io.IOException;
 import java.nio.file.*;
 
+
 public class ReadingJsonContent {
 
     private static String taskContent;
     private static String workerTask;
-
 
     public void readingJsonContentFromFile(String filePath) {
         try {
@@ -28,10 +28,12 @@ public class ReadingJsonContent {
         }
     }
 
+
     public String getTaskContent() {
 		return taskContent;
 	}
 
+    
     public String getWorkerTask() {
 		return workerTask;
 	}

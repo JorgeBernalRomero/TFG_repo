@@ -7,13 +7,9 @@ import javax.jms.MessageProducer;
 import javax.jms.Queue;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 
+
 public class SenderBuilder {
 
-	/**
-	 * 
-	 * @param session
-	 * @return
-	 */
 	public MessageProducer createProducer(Session session) {
 		MessageProducer producer = null;
 		

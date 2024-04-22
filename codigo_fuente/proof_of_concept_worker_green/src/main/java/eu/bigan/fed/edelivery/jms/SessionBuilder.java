@@ -7,17 +7,8 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 
 
-/**
- * 
- * @author Jorge Bernal Romero
- *
- */
 public class SessionBuilder {
 	
-	/**
-	 * 
-	 * @return
-	 */
 	public Session createSession() {
 		
 		Session session = null;

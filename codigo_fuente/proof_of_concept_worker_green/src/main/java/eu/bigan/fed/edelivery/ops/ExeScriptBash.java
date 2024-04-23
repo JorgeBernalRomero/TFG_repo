@@ -24,10 +24,10 @@ public class ExeScriptBash implements BiganFedListener{
 
         System.out.println(taskContent);
 
-        String greenDestDir = EnvParameters.getParameter("greenDestDir");
+        String destDir = EnvParameters.getParameter("destDir");
 
         //Converting taskContent into a executable file
-        String filePath= greenDestDir + "/" + messageId + "/" + "taskContentFile.sh";
+        String filePath= destDir + "/" + messageId + "/" + "taskContentFile.sh";
         byte[] contentBytes = taskContent.getBytes();
         File file = new File(filePath);
         try{

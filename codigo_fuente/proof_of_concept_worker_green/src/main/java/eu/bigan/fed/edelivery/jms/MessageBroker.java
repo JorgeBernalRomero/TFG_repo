@@ -35,9 +35,9 @@ public class MessageBroker implements MessageListener {
                 System.out.println(messageId);
                 ReturnMetadata.setMessageId(messageId);
 
-                String greenDestDir = EnvParameters.getParameter("greenDestDir");
+                String destDir = EnvParameters.getParameter("destDir");
 
-                String saveDir = greenDestDir + "/" + messageId;
+                String saveDir = destDir + "/" + messageId;
 
                 //crer un nuevo saveDir
                 File finalDir = new File(saveDir);

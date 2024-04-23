@@ -38,7 +38,7 @@ public class Sender{
             messageMap.setStringProperty("payload_1_mimeType", "text/xml");
             messageMap.setStringProperty("payload_1_description", "message");
 
-            String sendingFile = EnvParameters.getParameter("greenDestDir");
+            String sendingFile = EnvParameters.getParameter("destDir");
             sendingFile += "/" + messageId + "/" + "outputs.txt";
 
 			File file = new File(sendingFile);

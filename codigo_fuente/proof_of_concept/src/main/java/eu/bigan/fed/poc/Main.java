@@ -34,7 +34,7 @@ public class Main {
       
       if(!processList.isEmpty()) {
 
-		  for (int i = 0; i < 2 ; i++) { //processList.size()
+		  for (int i = 0; i < processList.size() ; i++) {
 			  String[] process = processList.get(i);
 		      System.out.println("processList[" + i + "] = (" + process[0] + ", " + process[1] + ", " + process[2] + ", " + process[3] + ", " + process[4] + ")");
 		      
@@ -69,6 +69,7 @@ public class Main {
 		      
 		      //envío el mensaje que toca
 		      sender.sending(session, producer, destNode, messageId, sendingPayload);
+		      
 		      
 		 }
 		  

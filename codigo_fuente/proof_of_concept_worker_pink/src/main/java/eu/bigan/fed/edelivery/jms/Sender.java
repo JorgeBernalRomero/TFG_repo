@@ -23,7 +23,7 @@ public class Sender{
 
             String nodeName = EnvParameters.getParameter("nodeName");
             messageMap.setStringProperty("fromPartyId", nodeName); //nodo inicial
-
+            
             messageMap.setStringProperty("fromPartyType", "urn:oasis:names:tc:ebcore:partyid-type:unregistered");
             messageMap.setStringProperty("toPartyId", destinationNode); //nodo destino
             messageMap.setStringProperty("toPartyType", "urn:oasis:names:tc:ebcore:partyid-type:unregistered");

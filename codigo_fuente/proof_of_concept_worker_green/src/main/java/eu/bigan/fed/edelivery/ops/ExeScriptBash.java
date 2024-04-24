@@ -26,8 +26,8 @@ public class ExeScriptBash implements BiganFedListener{
 
         String destDir = EnvParameters.getParameter("destDir");
 
-        //Converting taskContent into a executable file
-        String filePath= destDir + "/" + messageId + "/" + "taskContentFile.sh";
+        //Converting taskContent into an executable file
+        String filePath = destDir + "/" + messageId + "/" + "taskContentFile.sh";
         byte[] contentBytes = taskContent.getBytes();
         File file = new File(filePath);
         try{
@@ -51,8 +51,6 @@ public class ExeScriptBash implements BiganFedListener{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        StatusManager.setStatus(1);
 
         System.out.println("termina funcion de callback");
     }

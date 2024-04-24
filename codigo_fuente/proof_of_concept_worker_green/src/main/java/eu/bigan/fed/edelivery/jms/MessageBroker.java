@@ -4,12 +4,22 @@ import java.io.File;
 import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
+import javax.jms.MessageProducer;
+import javax.jms.Session;
+
 import eu.bigan.fed.edelivery.message.BiganFedListener;
-import eu.bigan.fed.edelivery.message.ReturnMetadata;
 import eu.bigan.fed.edelivery.utils.*;
 
 
 public class MessageBroker implements MessageListener {
+
+    Session session;
+    MessageProducer producer;
+
+    public MessageBroker(Session session, MessageProducer producer) {
+		this.session =  session;
+        this.producer = producer;
+	}
 
 	@Override
 	public void onMessage(Message msg) {
@@ -29,11 +39,9 @@ public class MessageBroker implements MessageListener {
 
                 String fromNodeID = m.getStringProperty("fromPartyId");    
                 System.out.println(fromNodeID);
-                ReturnMetadata.setDestNode(fromNodeID);
                 
                 String messageId = m.getStringProperty("conversationId");
                 System.out.println(messageId);
-                ReturnMetadata.setMessageId(messageId);
 
                 String destDir = EnvParameters.getParameter("destDir");
 
@@ -70,7 +78,10 @@ public class MessageBroker implements MessageListener {
                 }
 
                 callback.handleCallback(taskContent, messageId);
-        
+
+                //Una vez termina la función de callback, paso a enviar los resultados
+                Sender sender = new Sender();
+	            sender.sending(session, producer, fromNodeID, messageId);
                 
             } else{
                 String payload = "No Message Found!";

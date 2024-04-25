@@ -2,10 +2,12 @@ package eu.bigan.fed.poc;
 
 import java.io.File;
 import java.util.List;
+
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import eu.bigan.fed.edelivery.jms.*;
 import eu.bigan.fed.edelivery.message.*;
+import eu.bigan.fed.edelivery.ops.Timeout;
 import eu.bigan.fed.edelivery.utils.*;
 
 
@@ -19,6 +21,12 @@ public class Main {
 	  Session session = sessionBuilder.createSession();
 	  
 	  MessageRegistry messageRegistry = MessageRegistry.getInstance();
+	  
+	  
+	  //******************************************REVISAR
+	  int status = StatusManager.getInstance(); //se usa al añadir el mensaje (messageRegistry.addMessage(messageId, destNode, callback, timestamp, status);)
+	  
+	  
 	  
 	  ConsumerBuilder consumerBuilder = new ConsumerBuilder();
 	  consumerBuilder.createConsumer(session, messageRegistry);
@@ -46,6 +54,9 @@ public class Main {
 		      String callbackClassName = process[4];
 		      BiganFedListener callback = null;
 		      
+		      String timeoutString =  process[5];
+		      int timeout = Integer.parseInt(timeoutString);
+		      
 		      try {
 		        Class<?> callbackClass = Class.forName(callbackClassName);
 		        callback = (BiganFedListener) callbackClass.newInstance();
@@ -55,7 +66,9 @@ public class Main {
 		      
 		      GetTimestamp getTimeStamp = new GetTimestamp();
 		      String timestamp = getTimeStamp.gettingTimeStamp();
-		      int status = 0;
+		      
+		    //******************************************REVISAR
+		      StatusManager.setStatus(0);
 		      
 		      
 		      //Esta línea me añade un nuevo mensaje a la lista de mensajes
@@ -66,6 +79,14 @@ public class Main {
 		      String sendingPayload = jsonGenerator.generateJson(workerTask, taskContent, messageId);
 		      
 		      System.out.println(sendingPayload);
+		      
+		      
+		      
+		      //lanzo la función de timeout pasándole como parámetro el timeout que había leído del yaml
+		      //******************************************REVISAR
+		      Timeout timeoutFunc = new Timeout();
+		      timeoutFunc.completeTimeout(timeout);
+		      
 		      
 		      //envío el mensaje que toca
 		      sender.sending(session, producer, destNode, messageId, sendingPayload);

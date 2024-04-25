@@ -37,9 +37,10 @@ public class YamlReader {
                                 String taskContent = (String) actionMap.get("taskContent");
                                 String workerTask = (String) actionMap.get("worker_task");
                                 String callback = (String) actionMap.get("callback");
+                                String timeout =(String) actionMap.get("timeout");
 
                                 // Create a String array for each process and add to processList
-                                String[] process = new String[]{workerName, actionName, taskContent, workerTask, callback};
+                                String[] process = new String[]{workerName, actionName, taskContent, workerTask, callback, timeout};
                                 processList.add(process);
                             }
                         }

@@ -39,10 +39,17 @@ public class MessageBroker implements MessageListener {
                 System.out.println(messageId);
                 
 				ManageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);
+				
+				int status = coincidence.getStatus();
                 
 				if (coincidence != null) {
-					BiganFedListener callback = coincidence.getCallback();
-					callback.handleCallback(m);
+					if(status !=1) {
+						BiganFedListener callback = coincidence.getCallback();
+						callback.handleCallback(m);
+					}
+					else {
+						System.out.println("Timeout excedido para mensaje " + messageId + ". No se llama a la función de callback.");
+					}
 				} else {
 					System.out.println("Message with id " + messageId + " not found in registry");
 				}

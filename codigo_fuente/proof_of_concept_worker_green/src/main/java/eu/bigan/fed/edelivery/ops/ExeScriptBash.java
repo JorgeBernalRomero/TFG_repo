@@ -1,6 +1,8 @@
 package eu.bigan.fed.edelivery.ops;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.*;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
@@ -51,6 +53,13 @@ public class ExeScriptBash implements BiganFedListener{
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //LO PONGO PARA COMPROBAR QUE TARDE MÁS UNA TAREA Y QUE EL COORDINADOR SI PASA DETERMINADO TIEMPO LA DESECHE
+        try {
+			TimeUnit.SECONDS.sleep(5); //si pongo 20 no llegan (coordinador está a 15) si pongo 5 si llegan
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
         System.out.println("termina funcion de callback");
     }

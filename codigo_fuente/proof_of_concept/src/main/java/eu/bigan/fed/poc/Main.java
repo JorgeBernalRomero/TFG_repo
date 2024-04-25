@@ -1,6 +1,5 @@
 package eu.bigan.fed.poc;
 
-import java.io.File;
 import java.util.List;
 
 import javax.jms.MessageProducer;
@@ -21,12 +20,6 @@ public class Main {
 	  Session session = sessionBuilder.createSession();
 	  
 	  MessageRegistry messageRegistry = MessageRegistry.getInstance();
-	  
-	  
-	  //******************************************REVISAR
-	  int status = StatusManager.getInstance(); //se usa al añadir el mensaje (messageRegistry.addMessage(messageId, destNode, callback, timestamp, status);)
-	  
-	  
 	  
 	  ConsumerBuilder consumerBuilder = new ConsumerBuilder();
 	  consumerBuilder.createConsumer(session, messageRegistry);
@@ -67,12 +60,13 @@ public class Main {
 		      GetTimestamp getTimeStamp = new GetTimestamp();
 		      String timestamp = getTimeStamp.gettingTimeStamp();
 		      
-		    //******************************************REVISAR
-		      StatusManager.setStatus(0);
-		      
+		      int status = 0;
 		      
 		      //Esta línea me añade un nuevo mensaje a la lista de mensajes
 		      messageRegistry.addMessage(messageId, destNode, callback, timestamp, status);
+		      
+		      //recupero el mensaje que acabo de añadir
+		      ManageMetadata actualMessage = messageRegistry.getMessageFromListById(messageId);
 		      
 		      
 		      JsonGenerator jsonGenerator = new JsonGenerator();
@@ -81,16 +75,18 @@ public class Main {
 		      System.out.println(sendingPayload);
 		      
 		      
-		      
-		      //lanzo la función de timeout pasándole como parámetro el timeout que había leído del yaml
-		      //******************************************REVISAR
-		      Timeout timeoutFunc = new Timeout();
-		      timeoutFunc.completeTimeout(timeout);
-		      
-		      
-		      //envío el mensaje que toca
-		      sender.sending(session, producer, destNode, messageId, sendingPayload);
-		      
+		      Thread timeoutThread = new Thread(() -> {
+		    	  Timeout timeoutFunc = new Timeout();
+		    	  timeoutFunc.completeTimeout(timeout, actualMessage);
+		      });
+
+		      Thread messageThread = new Thread(() -> {
+		    	  sender.sending(session, producer, destNode, messageId, sendingPayload);
+		      });
+
+		      // Iniciar los hilos simultáneamente
+		      timeoutThread.start();
+		      messageThread.start();
 		      
 		 }
 		  

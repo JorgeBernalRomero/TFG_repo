@@ -2,17 +2,18 @@ package eu.bigan.fed.edelivery.ops;
 
 import java.util.concurrent.TimeUnit;
 
-import eu.bigan.fed.edelivery.utils.StatusManager;
+import eu.bigan.fed.edelivery.message.ManageMetadata;
+
 
 public class Timeout{
 	
-	public void completeTimeout(int timeout) {
+	public void completeTimeout(int timeout, ManageMetadata actualMessage) {
 		try {
 			TimeUnit.SECONDS.sleep(timeout);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
-		StatusManager.setStatus(1);
+		actualMessage.setStatus(1);
 	}
 }

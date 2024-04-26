@@ -3,26 +3,44 @@ package eu.bigan.fed.edelivery.message;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class MessageRegistry {
 	
 	private static MessageRegistry messageRegistry = new MessageRegistry();
 	private List<MessageMetadata> messagesList;
 	
+	/**
+	 * 
+	 */
 	private MessageRegistry() {
 		messagesList = new ArrayList<>();
 	}
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public static MessageRegistry getInstance() {
         return messageRegistry;
     }
 
-	
+	/**
+	 * 
+	 * @param metadata
+	 */
     public void addMessage(MessageMetadata metadata) {
         messagesList.add(metadata);
     }
     
-    
+    /**
+     * 
+     * @param messageId
+     * @return
+     */
     public MessageMetadata getMessageFromListById(String messageId) {
         for (MessageMetadata metadata : messagesList) {
             if (metadata.getMessageId().equals(messageId)) {
@@ -32,7 +50,11 @@ public class MessageRegistry {
         return null;
     }
     
-    
+    /**
+     * 
+     * @param list
+     * @return
+     */
     public List<String[]> listConversionToString(List<MessageMetadata> list) {
     	List<String[]> convertedList = new ArrayList<>();
 
@@ -51,7 +73,10 @@ public class MessageRegistry {
     	return convertedList;
     }
 
-
+    /**
+     * 
+     * @return
+     */
     public List<MessageMetadata> getAllMessages() {
         return new ArrayList<>(messagesList);
     }

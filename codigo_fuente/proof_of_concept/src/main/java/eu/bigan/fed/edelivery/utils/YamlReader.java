@@ -7,9 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 import org.yaml.snakeyaml.Yaml;
 
-
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class YamlReader {
 
+	/**
+	 * 
+	 * @return
+	 */
     public List<String[]> read() {
         List<String[]> processList = new ArrayList<>();
 

@@ -5,10 +5,19 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class FileManager{
 	
-
+	/**
+	 * 
+	 * @param file
+	 * @return
+	 * @throws IOException
+	 */
     public static byte[] readFileAsBytes(File file) throws IOException {
         try (RandomAccessFile accessFile = new RandomAccessFile(file, "r")){
             byte[] bytes = new byte[(int) accessFile.length()];
@@ -17,7 +26,12 @@ public class FileManager{
         }
     }
 
-
+    /**
+     * 
+     * @param bytes
+     * @param fileName
+     * @throws IOException
+     */
     public void writeFileAsBytes(byte[] bytes, String fileName) throws IOException {
         File file = new File(fileName);
 
@@ -26,7 +40,12 @@ public class FileManager{
         }
     }
 
-
+    /**
+     * 
+     * @param receivedFile
+     * @param fileBytes
+     * @throws IOException
+     */
     public static void writeBytesToFile(File receivedFile, byte[] fileBytes) throws IOException {
         try(FileOutputStream fos = new FileOutputStream(receivedFile)){
             fos.write(fileBytes);

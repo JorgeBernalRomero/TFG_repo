@@ -2,25 +2,37 @@ package eu.bigan.fed.edelivery.ops;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
-
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.*;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class ExeScriptBash implements BiganFedListener{
     
     private String taskContent;
 
-    // Public no-argument constructor
+    /**
+     * 
+     */
     public ExeScriptBash() {
         // Optional: Initialize any default values for properties here (if needed)
     }
 
+    /**
+     * 
+     */
     public ExeScriptBash(String taskContent) {
         this.taskContent = taskContent;
     }
 
-  @Override
+    @Override
+    /**
+     * 
+     */
     public void handleCallback(String taskContent, String messageId) {
         System.out.println("estoy dentro del handling callback y me ha llegado el siguiente taskContent:");
 

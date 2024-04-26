@@ -6,9 +6,16 @@ import javax.jms.Session;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 
-
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class SessionBuilder {
 	
+	/**
+	 * 
+	 */
 	public Session createSession() {
 		
 		Session session = null;

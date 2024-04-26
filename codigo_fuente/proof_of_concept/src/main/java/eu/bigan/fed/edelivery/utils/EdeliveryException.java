@@ -1,5 +1,10 @@
 package eu.bigan.fed.edelivery.utils;
 
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class EdeliveryException extends Exception {
 
 	/**
@@ -24,7 +29,6 @@ public class EdeliveryException extends Exception {
 		
 	}
 	
-	
 	/**
 	 * 
 	 * @param message
@@ -33,5 +37,4 @@ public class EdeliveryException extends Exception {
 		super(message);
 		
 	}
-
 }

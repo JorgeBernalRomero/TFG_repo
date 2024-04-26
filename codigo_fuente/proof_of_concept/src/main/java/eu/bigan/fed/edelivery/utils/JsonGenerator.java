@@ -3,8 +3,20 @@ package eu.bigan.fed.edelivery.utils;
 import java.io.File;
 import org.json.JSONObject;
 
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class JsonGenerator {
     
+	/**
+	 * 
+	 * @param workerTask
+	 * @param taskContent
+	 * @param messageId
+	 * @return
+	 */
     public String generateJson(String workerTask, String taskContent, String messageId) {
         
 	    	JSONObject jsonObject = new JSONObject();

@@ -10,16 +10,26 @@ import eu.bigan.fed.edelivery.Sender;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.*;
 
-
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class MessageBroker implements MessageListener {
 
     Session session;
 
+    /**
+     * 
+     */
     public MessageBroker(Session session) {
 		this.session =  session;
 	}
 
 	@Override
+    /**
+     * 
+     */
 	public void onMessage(Message msg) {
 
 	    try {

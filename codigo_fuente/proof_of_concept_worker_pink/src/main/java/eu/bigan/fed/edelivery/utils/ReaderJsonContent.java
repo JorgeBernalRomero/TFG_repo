@@ -4,12 +4,19 @@ import org.json.*;
 import java.io.IOException;
 import java.nio.file.*;
 
-
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class ReaderJsonContent {
 
     private static String taskContent;
     private static String workerTask;
 
+    /**
+     * 
+     */
     public void readJsonContentFromFile(String filePath) {
         try {
             // Read the entire file content into a String
@@ -28,12 +35,16 @@ public class ReaderJsonContent {
         }
     }
 
-
+    /**
+     * 
+     */
     public String getTaskContent() {
 		return taskContent;
 	}
 
-    
+    /**
+     * 
+     */
     public String getWorkerTask() {
 		return workerTask;
 	}

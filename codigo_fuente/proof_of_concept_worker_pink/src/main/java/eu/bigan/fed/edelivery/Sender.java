@@ -2,23 +2,32 @@ package eu.bigan.fed.edelivery;
 
 import java.io.File;
 import javax.jms.*;
-
 import eu.bigan.fed.edelivery.jms.SenderBuilder;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 import eu.bigan.fed.edelivery.utils.FileManager;
 
-
+/**
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
+ *
+ */
 public class Sender{
 
     private Session session;
 	private MessageProducer producer;
 
+    /**
+     * 
+     */
 	public Sender(Session session){
 		this.session = session;
 		SenderBuilder senderBuilder = new SenderBuilder();
 		this.producer = senderBuilder.createProducer(session);
 	}
 	
+    /**
+     * 
+     */
 	public void send(String destinationNode, String messageId){
         try{
             System.out.println("I'm in the sending now!");

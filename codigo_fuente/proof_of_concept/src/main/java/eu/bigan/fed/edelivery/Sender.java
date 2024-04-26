@@ -2,7 +2,6 @@ package eu.bigan.fed.edelivery;
 
 import java.io.File;
 import javax.jms.*;
-
 import eu.bigan.fed.edelivery.jms.SenderBuilder;
 import eu.bigan.fed.edelivery.utils.FileManager;
 
@@ -11,7 +10,11 @@ public class Sender{
 	
 	private Session session;
 	private MessageProducer producer;
-
+	
+	/**
+	 * 
+	 * @param session
+	 */
 	public Sender(Session session){
 		this.session = session;
 		SenderBuilder senderBuilder = new SenderBuilder();
@@ -19,6 +22,12 @@ public class Sender{
 		
 	}
 	
+	/**
+	 * 
+	 * @param destinationNode
+	 * @param messageId
+	 * @param sendingFile
+	 */
 	public void send(String destinationNode, String messageId, String sendingFile){
         try{
             System.out.println("I'm in the sending now!");

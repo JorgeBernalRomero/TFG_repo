@@ -7,12 +7,11 @@ import java.util.Properties;
 import java.util.PropertyResourceBundle;
 
 /**
- * 
- * @author Jorge Bernal Romero
+ * Texto sobre lo que hace esta clase.
+ * @author jorgebernalromero
  *
  */
 public class EnvParameters {
-
 
 	/**
 	 * Fichero de properties del entorno Midas de la aplicacion

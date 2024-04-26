@@ -63,13 +63,10 @@ public class Main {
 		        e.printStackTrace();
 		      }
 		      
-		      GetTimestamp getTimeStamp = new GetTimestamp();
-		      String timestamp = getTimeStamp.gettingTimeStamp();
-		      
 		      int status = 0;
 		      
 		      //Esta línea me añade un nuevo mensaje a la lista de mensajes
-		      messageRegistry.addMessage(messageId, destNode, callback, timestamp, status);
+		      messageRegistry.addMessage(messageId, destNode, callback, status);
 		      
 		      //recupero el mensaje que acabo de añadir
 		      ManageMetadata actualMessage = messageRegistry.getMessageFromListById(messageId);

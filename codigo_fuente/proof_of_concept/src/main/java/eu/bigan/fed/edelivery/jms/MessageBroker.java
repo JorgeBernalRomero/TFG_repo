@@ -7,16 +7,28 @@ import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.message.ManageMetadata;
 import eu.bigan.fed.edelivery.message.MessageRegistry;
 
-
+/**
+ * Texto sobre lo que hace esta clase...
+ * @author jorgebernalromero
+ *
+ */
 public class MessageBroker implements MessageListener {
 	
 	MessageRegistry messageRegistry;
 	
+	/**
+	 * 
+	 * @param messageRegistry
+	 */
 	public MessageBroker(MessageRegistry messageRegistry) {
 		this.messageRegistry =  messageRegistry;
 	}
 
 	@Override
+	/**
+	 * @param msg
+	 * @return
+	 */
 	public void onMessage(Message msg) {
 
 	    try {

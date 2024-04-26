@@ -18,8 +18,8 @@ public class MessageRegistry {
     }
 
 	
-    public void addMessage(String messageId, String destNode, BiganFedListener callback, String timestamp, int status) {
-        ManageMetadata metadata = new ManageMetadata(messageId, destNode, callback, timestamp, status);
+    public void addMessage(String messageId, String destNode, BiganFedListener callback, int status) {
+        ManageMetadata metadata = new ManageMetadata(messageId, destNode, callback, status);
         messagesList.add(metadata);
     }
     

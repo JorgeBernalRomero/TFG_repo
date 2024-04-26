@@ -1,0 +1,34 @@
+version: 1.0
+workers:
+  - name: "domibus-green"
+    actions:
+      - name: "task1_green"
+        taskContent: |
+          #!/bin/bash
+          ls > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/greenNode/green_dest_dir/task1_green/outputs.txt
+        worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
+        callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
+        timeout: "15"
+      - name: "task2_green"
+        taskContent: |
+          #!/bin/bash
+          ps aux > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/greenNode/green_dest_dir/task2_green/outputs.txt
+        worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
+        callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
+        timeout: "15"
+  - name: "domibus-pink"
+    actions:
+      - name: "task1_pink"
+        taskContent: |
+          #!/bin/bash
+          echo "hola buenas" > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/pinkNode/pink_dest_dir/task1_pink/outputs.txt
+        worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
+        callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
+        timeout: "15"
+      - name: "task2_pink"
+        taskContent: |
+          #!/bin/bash
+          ls -l > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/pinkNode/pink_dest_dir/task2_pink/outputs.txt
+        worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
+        callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
+        timeout: "15"

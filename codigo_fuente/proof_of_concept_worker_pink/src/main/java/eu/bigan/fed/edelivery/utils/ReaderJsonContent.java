@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.nio.file.*;
 
 
-public class ReadingJsonContent {
+public class ReaderJsonContent {
 
     private static String taskContent;
     private static String workerTask;
 
-    public void readingJsonContentFromFile(String filePath) {
+    public void readJsonContentFromFile(String filePath) {
         try {
             // Read the entire file content into a String
             String fileContent = new String(Files.readAllBytes(Paths.get(filePath)));

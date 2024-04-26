@@ -4,9 +4,9 @@ import java.io.File;
 import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
-import javax.jms.MessageProducer;
 import javax.jms.Session;
 
+import eu.bigan.fed.edelivery.Sender;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.*;
 
@@ -14,11 +14,9 @@ import eu.bigan.fed.edelivery.utils.*;
 public class MessageBroker implements MessageListener {
 
     Session session;
-    MessageProducer producer;
 
-    public MessageBroker(Session session, MessageProducer producer) {
+    public MessageBroker(Session session) {
 		this.session =  session;
-        this.producer = producer;
 	}
 
 	@Override
@@ -57,8 +55,8 @@ public class MessageBroker implements MessageListener {
 				FileManager.writeBytesToFile(destinationFile, m.getBytes("payload_1"));
         		System.out.println("File saved to: " + destinationFile.getAbsolutePath());
 
-                ReadingJsonContent reader = new ReadingJsonContent();
-                reader.readingJsonContentFromFile(destinationFile.getAbsolutePath());
+                ReaderJsonContent reader = new ReaderJsonContent();
+                reader.readJsonContentFromFile(destinationFile.getAbsolutePath());
 
                 String taskContent = reader.getTaskContent();
                 String workerTask = reader.getWorkerTask();
@@ -80,8 +78,8 @@ public class MessageBroker implements MessageListener {
                 callback.handleCallback(taskContent, messageId);
 
                 //Una vez termina la función de callback, paso a enviar los resultados
-                Sender sender = new Sender();
-	            sender.sending(session, producer, fromNodeID, messageId);
+                Sender sender = new Sender(session);
+	            sender.send(fromNodeID, messageId);
                 
             } else{
                 String payload = "No Message Found!";

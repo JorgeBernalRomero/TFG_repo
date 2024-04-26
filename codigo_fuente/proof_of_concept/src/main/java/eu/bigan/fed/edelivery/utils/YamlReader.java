@@ -10,7 +10,7 @@ import org.yaml.snakeyaml.Yaml;
 
 public class YamlReader {
 
-    public List<String[]> yamlReading() {
+    public List<String[]> read() {
         List<String[]> processList = new ArrayList<>();
 
         String file_yaml_path = EnvParameters.getParameter("blueNodeYamlSource");

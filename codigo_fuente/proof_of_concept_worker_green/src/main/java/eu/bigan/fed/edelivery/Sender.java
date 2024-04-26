@@ -1,15 +1,25 @@
-package eu.bigan.fed.edelivery.jms;
+package eu.bigan.fed.edelivery;
 
 import java.io.File;
 import javax.jms.*;
 
+import eu.bigan.fed.edelivery.jms.SenderBuilder;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 import eu.bigan.fed.edelivery.utils.FileManager;
 
 
 public class Sender{
+
+    private Session session;
+	private MessageProducer producer;
+
+	public Sender(Session session){
+		this.session = session;
+		SenderBuilder senderBuilder = new SenderBuilder();
+		this.producer = senderBuilder.createProducer(session);
+	}
 	
-	public void sending(Session session, MessageProducer producer, String destinationNode, String messageId){
+	public void send(String destinationNode, String messageId){
         try{
             System.out.println("I'm in the sending now!");
 
@@ -33,7 +43,6 @@ public class Sender{
             messageMap.setStringProperty("finalRecipient", "urn:oasis:names:tc:ebcore:partyid-type:unregistered:C4");
             messageMap.setStringProperty("protocol", "AS4");
             messageMap.setStringProperty("conversationId", messageId);
-            messageMap.setJMSCorrelationID("12345");
             messageMap.setStringProperty("totalNumberOfPayloads", "1");
 
             //messageMap.setStringProperty("payload_1_mimeContentId", "cid:file-attached");

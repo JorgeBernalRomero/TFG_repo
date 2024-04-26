@@ -6,7 +6,7 @@ import java.util.List;
 public class MessageRegistry {
 	
 	private static MessageRegistry messageRegistry = new MessageRegistry();
-	private List<ManageMetadata> messagesList;
+	private List<MessageMetadata> messagesList;
 	
 	private MessageRegistry() {
 		messagesList = new ArrayList<>();
@@ -18,14 +18,13 @@ public class MessageRegistry {
     }
 
 	
-    public void addMessage(String messageId, String destNode, BiganFedListener callback, int status) {
-        ManageMetadata metadata = new ManageMetadata(messageId, destNode, callback, status);
+    public void addMessage(MessageMetadata metadata) {
         messagesList.add(metadata);
     }
     
     
-    public ManageMetadata getMessageFromListById(String messageId) {
-        for (ManageMetadata metadata : messagesList) {
+    public MessageMetadata getMessageFromListById(String messageId) {
+        for (MessageMetadata metadata : messagesList) {
             if (metadata.getMessageId().equals(messageId)) {
                 return metadata;
             }
@@ -34,10 +33,10 @@ public class MessageRegistry {
     }
     
     
-    public List<String[]> listConversionToString(List<ManageMetadata> list) {
+    public List<String[]> listConversionToString(List<MessageMetadata> list) {
     	List<String[]> convertedList = new ArrayList<>();
 
-    	for (ManageMetadata metadata : list) {
+    	for (MessageMetadata metadata : list) {
     		String[] stringArray = new String[5];
     		stringArray[0] = metadata.getMessageId();
     		stringArray[1] = metadata.getDestNode();
@@ -53,7 +52,7 @@ public class MessageRegistry {
     }
 
 
-    public List<ManageMetadata> getAllMessages() {
+    public List<MessageMetadata> getAllMessages() {
         return new ArrayList<>(messagesList);
     }
     

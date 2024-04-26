@@ -2,7 +2,7 @@ package eu.bigan.fed.edelivery.message;
 
 import eu.bigan.fed.edelivery.utils.GetTimestamp;
 
-public class ManageMetadata {
+public class MessageMetadata {
 
     private String messageId;
     private String destNode;
@@ -11,12 +11,12 @@ public class ManageMetadata {
     private int status;
 
     
-    public ManageMetadata(String messageId, String destNode, BiganFedListener callback, int status) {
+    public MessageMetadata(String messageId, String destNode, BiganFedListener callback, int status) {
         this.messageId = messageId;
         this.destNode = destNode;
         this.callback = callback;
         GetTimestamp getTimeStamp = new GetTimestamp();
-	    this.timestamp = getTimeStamp.gettingTimeStamp();
+	    this.timestamp = getTimeStamp.getTimeStamp();
         this.status = status;
     }
 

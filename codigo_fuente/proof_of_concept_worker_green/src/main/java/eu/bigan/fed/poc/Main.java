@@ -1,6 +1,5 @@
 package eu.bigan.fed.poc;
 
-import javax.jms.MessageProducer;
 import javax.jms.Session;
 import eu.bigan.fed.edelivery.jms.*;
 import org.apache.logging.log4j.LogManager;
@@ -20,12 +19,9 @@ public class Main {
 
 	SessionBuilder sessionBuilder = new SessionBuilder();
 	Session session = sessionBuilder.createSession();
-
-	SenderBuilder senderBuilder = new SenderBuilder();
-	MessageProducer producer = senderBuilder.createProducer(session);
 	
 	ConsumerBuilder consumerBuilder = new ConsumerBuilder();
-	consumerBuilder.createConsumer(session, producer);
+	consumerBuilder.createConsumer(session);
 
    }
 }

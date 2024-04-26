@@ -1,7 +1,6 @@
 package eu.bigan.fed.poc;
 
 import java.util.List;
-import javax.jms.MessageProducer;
 import javax.jms.Session;
 import eu.bigan.fed.edelivery.jms.*;
 import eu.bigan.fed.edelivery.message.*;
@@ -9,6 +8,7 @@ import eu.bigan.fed.edelivery.ops.Timeout;
 import eu.bigan.fed.edelivery.utils.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import eu.bigan.fed.edelivery.*;
 
 
 public class Main {
@@ -30,13 +30,10 @@ public class Main {
 	  ConsumerBuilder consumerBuilder = new ConsumerBuilder();
 	  consumerBuilder.createConsumer(session, messageRegistry);
 	  
-	  SenderBuilder senderBuilder = new SenderBuilder();
-	  MessageProducer producer = senderBuilder.createProducer(session);
-	  
-	  Sender sender = new Sender();
+	  Sender sender = new Sender(session);
 	  
 	  YamlReader yamlReader = new YamlReader();
-      List<String[]> processList = yamlReader.yamlReading();
+      List<String[]> processList = yamlReader.read();
 
       
       if(!processList.isEmpty()) {
@@ -65,11 +62,13 @@ public class Main {
 		      
 		      int status = 0;
 		      
-		      //Esta línea me añade un nuevo mensaje a la lista de mensajes
-		      messageRegistry.addMessage(messageId, destNode, callback, status);
+		      //mejor crear el messageMetadata fuera y al add message le paso eso 
+		      MessageMetadata metadata = new MessageMetadata(messageId, destNode, callback, status);
+		      messageRegistry.addMessage(metadata);
+		      
 		      
 		      //recupero el mensaje que acabo de añadir
-		      ManageMetadata actualMessage = messageRegistry.getMessageFromListById(messageId);
+		      MessageMetadata actualMessage = messageRegistry.getMessageFromListById(messageId);
 		      
 		      
 		      JsonGenerator jsonGenerator = new JsonGenerator();
@@ -84,7 +83,7 @@ public class Main {
 		      });
 
 		      Thread messageThread = new Thread(() -> {
-		    	  sender.sending(session, producer, destNode, messageId, sendingPayload);
+		    	  sender.send(destNode, messageId, sendingPayload);
 		      });
 
 		      // Iniciar los hilos simultáneamente
@@ -94,7 +93,7 @@ public class Main {
 		 }
 		  
 		//Las siguientes líneas sirven para mostrar todos los mensajes que hay en la lista
-	      List<ManageMetadata> fullList = messageRegistry.getAllMessages();
+	      List<MessageMetadata> fullList = messageRegistry.getAllMessages();
 	      
 	      List<String[]> showingList = messageRegistry.listConversionToString(fullList);
 	      

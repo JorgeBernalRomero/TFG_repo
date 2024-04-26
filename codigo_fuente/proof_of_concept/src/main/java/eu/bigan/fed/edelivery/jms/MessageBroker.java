@@ -4,7 +4,7 @@ import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
-import eu.bigan.fed.edelivery.message.ManageMetadata;
+import eu.bigan.fed.edelivery.message.MessageMetadata;
 import eu.bigan.fed.edelivery.message.MessageRegistry;
 
 /**
@@ -50,7 +50,7 @@ public class MessageBroker implements MessageListener {
                 String messageId = m.getStringProperty("conversationId");
                 System.out.println(messageId);
                 
-				ManageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);
+				MessageMetadata coincidence = messageRegistry.getMessageFromListById(messageId);
 				
 				int status = coincidence.getStatus();
                 

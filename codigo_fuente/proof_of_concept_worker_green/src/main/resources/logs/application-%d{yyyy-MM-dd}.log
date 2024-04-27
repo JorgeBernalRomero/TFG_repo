@@ -1,0 +1,2 @@
+18:00:48 INFO  eu.bigan.fed.poc.Main - Mensaje de información sacado por el logger.
+18:00:48 ERROR eu.bigan.fed.poc.Main - Mensaje de error sacado por el logger.

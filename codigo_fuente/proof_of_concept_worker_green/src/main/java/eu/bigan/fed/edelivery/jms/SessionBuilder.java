@@ -5,6 +5,8 @@ import javax.jms.JMSException;
 import javax.jms.Session;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Texto sobre lo que hace esta clase.
@@ -17,6 +19,8 @@ public class SessionBuilder {
 	 * 
 	 */
 	public Session createSession() {
+
+		final Logger logger = LogManager.getLogger(SessionBuilder.class);
 		
 		Session session = null;
 		
@@ -33,9 +37,12 @@ public class SessionBuilder {
 			
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 			
-			System.out.println("he creado la sesión");
+			//System.out.println("he creado la sesión");
+
+			logger.info("La sesión se ha creado correctamente.");
 			
 		} catch (JMSException e) {
+			logger.error("Ha habido un problema en la creación de la sesión.");
 			e.printStackTrace();
 		}
 		

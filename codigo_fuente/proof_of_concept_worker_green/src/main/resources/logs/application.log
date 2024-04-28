@@ -1,0 +1,19 @@
+22:29:13 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
+22:29:14 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+22:29:14 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+22:29:24 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+22:29:24 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+22:29:24 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+22:29:24 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
+22:29:24 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Correcta ejecución del script.
+22:29:29 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
+22:29:29 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+22:29:29 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+22:29:29 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+22:29:29 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+22:29:29 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+22:29:29 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
+22:29:29 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Correcta ejecución del script.
+22:29:34 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
+22:29:34 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+22:29:35 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.

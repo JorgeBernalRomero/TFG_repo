@@ -5,6 +5,8 @@ import javax.jms.*;
 import eu.bigan.fed.edelivery.jms.SenderBuilder;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 import eu.bigan.fed.edelivery.utils.FileManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Texto sobre lo que hace esta clase.
@@ -29,8 +31,11 @@ public class Sender{
      * 
      */
 	public void send(String destinationNode, String messageId){
+
+        final Logger logger = LogManager.getLogger(Sender.class);
+
         try{
-            System.out.println("I'm in the sending now!");
+            //System.out.println("I'm in the sending now!");
 
             MapMessage messageMap = session.createMapMessage();
 
@@ -68,10 +73,13 @@ public class Sender{
 
             producer.send(messageMap);
            
-            System.out.println("Sending message content is the following!");
-            System.out.println(messageMap);
+            //System.out.println("Sending message content is the following!");
+            //System.out.println(messageMap);
+
+            logger.info("El envío se ha realizado correctamente.");
         }
         catch (Exception e){
+            logger.error("No se ha podido realizar el envío.");
             e.printStackTrace();
         }
     }

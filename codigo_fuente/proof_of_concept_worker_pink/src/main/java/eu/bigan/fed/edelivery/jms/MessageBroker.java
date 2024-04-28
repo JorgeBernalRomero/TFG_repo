@@ -5,10 +5,11 @@ import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.Session;
-
 import eu.bigan.fed.edelivery.Sender;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Texto sobre lo que hace esta clase.
@@ -18,7 +19,7 @@ import eu.bigan.fed.edelivery.utils.*;
 public class MessageBroker implements MessageListener {
 
     Session session;
-
+    
     /**
      * 
      */
@@ -32,24 +33,28 @@ public class MessageBroker implements MessageListener {
      */
 	public void onMessage(Message msg) {
 
+        final Logger logger = LogManager.getLogger(MessageBroker.class);
+
 	    try {
-            System.out.println("Beggining of the received message.");
-            System.out.println(msg);
-            System.out.println("End of the received message.");
+            //System.out.println("Beggining of the received message.");
+            //System.out.println(msg);
+            //System.out.println("End of the received message.");
+
+            logger.info("Recibo correctamente el mensaje en el onMessage.");
 
             MapMessage m = (MapMessage) msg;
             
             if (msg instanceof MapMessage) {
 
-            	System.out.println(msg.getJMSMessageID());
-                System.out.println(m.getBytes("payload_1"));
-                System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
+            	//System.out.println(msg.getJMSMessageID());
+                //System.out.println(m.getBytes("payload_1"));
+                //System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
 
                 String fromNodeID = m.getStringProperty("fromPartyId");    
-                System.out.println(fromNodeID);
+                //System.out.println(fromNodeID);
                 
                 String messageId = m.getStringProperty("conversationId");
-                System.out.println(messageId);
+                //System.out.println(messageId);
 
                 String destDir = EnvParameters.getParameter("destDir");
 
@@ -63,7 +68,9 @@ public class MessageBroker implements MessageListener {
 
                 File destinationFile = new File(finalDir, "payload_1");
 				FileManager.writeBytesToFile(destinationFile, m.getBytes("payload_1"));
-        		System.out.println("File saved to: " + destinationFile.getAbsolutePath());
+        		//System.out.println("File saved to: " + destinationFile.getAbsolutePath());
+                logger.info("El fichero se ha guardado correctamente.");
+
 
                 ReaderJsonContent reader = new ReaderJsonContent();
                 reader.readJsonContentFromFile(destinationFile.getAbsolutePath());
@@ -71,8 +78,8 @@ public class MessageBroker implements MessageListener {
                 String taskContent = reader.getTaskContent();
                 String workerTask = reader.getWorkerTask();
 
-                System.out.println(taskContent);
-                System.out.println(workerTask);
+                //System.out.println(taskContent);
+                //System.out.println(workerTask);
 
                 //ahora hay que llamar a la función de callback que me hace lo que yo quiero
                 String callbackClassName = workerTask;
@@ -91,13 +98,15 @@ public class MessageBroker implements MessageListener {
                 Sender sender = new Sender(session);
 	            sender.send(fromNodeID, messageId);
                 
+                
             } else{
-                String payload = "No Message Found!";
-                System.out.println(payload);
+                //System.out.println("No Message Found!");
+                logger.error("Mensaje inválido.");
             }
 
-            System.out.println("fin");
+            //System.out.println("fin");
         } catch (Exception e) {
+            logger.error("No ha sido posible gestionar el mensaje recibido en el onMessage.");
             e.printStackTrace();
         }		
 

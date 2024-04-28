@@ -3,12 +3,19 @@ package eu.bigan.fed.edelivery.message;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import eu.bigan.fed.edelivery.utils.YamlReader;
+
 /**
  * Texto sobre lo que hace esta clase.
  * @author jorgebernalromero
  *
  */
 public class MessageRegistry {
+	
+	final Logger logger = LogManager.getLogger(MessageRegistry.class);
 	
 	private static MessageRegistry messageRegistry = new MessageRegistry();
 	private List<MessageMetadata> messagesList;
@@ -34,6 +41,7 @@ public class MessageRegistry {
 	 */
     public void addMessage(MessageMetadata metadata) {
         messagesList.add(metadata);
+        logger.info("Mensaje añadido correctamente");
     }
     
     /**

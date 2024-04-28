@@ -5,7 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.yaml.snakeyaml.Yaml;
+
+import eu.bigan.fed.poc.Main;
 
 /**
  * Texto sobre lo que hace esta clase.
@@ -19,6 +24,9 @@ public class YamlReader {
 	 * @return
 	 */
     public List<String[]> read() {
+    	
+    	final Logger logger = LogManager.getLogger(YamlReader.class);
+    	
         List<String[]> processList = new ArrayList<>();
 
         String file_yaml_path = EnvParameters.getParameter("blueNodeYamlSource");
@@ -55,8 +63,14 @@ public class YamlReader {
                     }
                 }
             }
+            
+            logger.info("Lectura del yaml correcta.");
+            
         } catch (IOException e) {
-            System.out.println("Error reading YAML file: " + e.getMessage());
+        	//System.out.println("Error reading YAML file: " + e.getMessage());
+        	logger.error("Lectura del yaml incorrecta.");
+        	
+        	e.printStackTrace();
         }
 
         return processList;

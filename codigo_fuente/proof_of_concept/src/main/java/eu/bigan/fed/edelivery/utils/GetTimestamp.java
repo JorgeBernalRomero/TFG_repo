@@ -22,6 +22,7 @@ public class GetTimestamp {
 
 	    // Combine formatted timestamp and milliseconds into a single string
 	    String combinedString = formattedTimestamp + ":" + timestampInMilliseconds;
+	    
 	    return combinedString;
 	}
 }

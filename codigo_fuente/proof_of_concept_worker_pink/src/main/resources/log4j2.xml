@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <configuration status="WARN">
   <appenders>
     <RollingFile name="AllLogs"
-                 fileName="/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/TFG_repo/codigo_fuente/proof_of_concept_worker_pink/src/main/resources/logs/application-%d{yyyy-MM-dd}.log"
-                 filePattern="/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/TFG_repo/codigo_fuente/proof_of_concept_worker_pink/src/main/resources/logs/application-%d{yyyy-MM-dd}-%i.log">
+      fileName="/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/TFG_repo/codigo_fuente/proof_of_concept_worker_pink/src/main/resources/logs/application.log"  
+      filePattern="/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/TFG_repo/codigo_fuente/proof_of_concept_worker_pink/src/main/resources/logs/application.log">
       <PatternLayout pattern="%d{HH:mm:ss} %-5level %logger{36} - %msg%n" />
       <Policies>
-        <SizeBasedTrigger size="10 MB" />
-      </Policies>
+        </Policies>
     </RollingFile>
   </appenders>
   <loggers>

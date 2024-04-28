@@ -24,10 +24,11 @@ public class Main {
 	public static void main(String[] args) {
 		final Logger logger = LogManager.getLogger(Main.class);
 			  
-		logger.info("Mensaje de información sacado por el logger.");
-		logger.error("Mensaje de error sacado por el logger.");
-		   
-		System.out.println("hola estoy en el main del coord");
+		//logger.info("Mensaje de información sacado por el logger (ejemplo MAIN).");
+		//logger.error("Mensaje de error sacado por el logger (ejemplo MAIN).");
+		
+		//System.out.println("hola estoy en el main del coord");
+		logger.info("Comienza el coordinador.");
 		  
 		SessionBuilder sessionBuilder = new SessionBuilder();
 		Session session = sessionBuilder.createSession();
@@ -46,6 +47,8 @@ public class Main {
 		if(!processList.isEmpty()) {
 			for (int i = 0; i < processList.size() ; i++) {
 				String[] process = processList.get(i);
+				
+				//este print lo dejo a modo de debugging de momento
 				System.out.println("processList[" + i + "] = (" + process[0] + ", " + process[1] + ", " + process[2] + ", " + process[3] + ", " + process[4] + ")");
 	      
 				String destNode = process[0];
@@ -68,18 +71,16 @@ public class Main {
 	      
 				int status = 0;
 	      
-				//mejor crear el messageMetadata fuera y al add message le paso eso 
 				MessageMetadata metadata = new MessageMetadata(messageId, destNode, callback, status);
 				messageRegistry.addMessage(metadata);
 	      
 				//recupero el mensaje que acabo de añadir
 				MessageMetadata actualMessage = messageRegistry.getMessageFromListById(messageId);
 	      
-	      
 				JsonGenerator jsonGenerator = new JsonGenerator();
 				String sendingPayload = jsonGenerator.generateJson(workerTask, taskContent, messageId);
-	      
-				System.out.println(sendingPayload);
+				
+				//System.out.println(sendingPayload);
 		      
 		      
 				Thread timeoutThread = new Thread(() -> {

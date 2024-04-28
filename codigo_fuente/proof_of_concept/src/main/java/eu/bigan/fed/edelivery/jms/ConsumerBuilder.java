@@ -1,6 +1,8 @@
 package eu.bigan.fed.edelivery.jms;
 
 import javax.jms.Session;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.jms.JMSException;
 import javax.jms.MessageConsumer;
 import javax.jms.MessageListener;
@@ -22,6 +24,9 @@ public class ConsumerBuilder {
 	 * @return
 	 */
 	public MessageConsumer createConsumer(Session session, MessageRegistry messageRegistry) {
+		
+		final Logger logger = LogManager.getLogger(ConsumerBuilder.class);
+		
 		MessageConsumer consumer = null;
 		
 		try {
@@ -29,9 +34,12 @@ public class ConsumerBuilder {
 			consumer = session.createConsumer(queue, "", true);
 			consumer.setMessageListener((MessageListener) new MessageBroker(messageRegistry));
 			
-			System.out.println("acabo de crear el consumer");
+			//System.out.println("acabo de crear el consumer");
+			
+			logger.info("El consumer se ha creado correctamente.");
 
 		} catch (JMSException e) {
+			logger.error("Ha habido un problema en la creación del consumer.");
 			e.printStackTrace();
 		}
 		

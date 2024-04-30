@@ -15,14 +15,6 @@ import org.apache.logging.log4j.Logger;
  */
 public class SaveToFiles implements BiganFedListener{
 
-  /**
-   * 
-   */
-  public SaveToFiles() {
-      // Optional: Initialize any default values for properties here (if needed)
-  }
-
-
   @Override
   /**
    * 

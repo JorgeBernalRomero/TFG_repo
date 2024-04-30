@@ -15,22 +15,6 @@ import org.apache.logging.log4j.Logger;
  */
 public class ExeScriptBash implements BiganFedListener{
     
-    private String taskContent;
-
-    /**
-     * 
-     */
-    public ExeScriptBash() {
-        // Optional: Initialize any default values for properties here (if needed)
-    }
-
-    /**
-     * 
-     */
-    public ExeScriptBash(String taskContent) {
-        this.taskContent = taskContent;
-    }
-
     @Override
     /**
      * 

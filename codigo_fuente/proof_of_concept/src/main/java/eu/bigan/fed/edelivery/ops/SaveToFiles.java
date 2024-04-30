@@ -15,9 +15,6 @@ import org.apache.logging.log4j.Logger;
  */
 public class SaveToFiles implements BiganFedListener{
 
-  private MapMessage messageMap;
-  private String destNode;
-
   /**
    * 
    */
@@ -25,15 +22,6 @@ public class SaveToFiles implements BiganFedListener{
       // Optional: Initialize any default values for properties here (if needed)
   }
 
-  /**
-   * 
-   * @param messageMap
-   * @param destNode
-   */
-  public SaveToFiles(MapMessage messageMap, String destNode) {
-      this.messageMap = messageMap;
-      this.destNode = destNode;
-  }
 
   @Override
   /**

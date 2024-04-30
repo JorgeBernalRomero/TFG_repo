@@ -98,7 +98,7 @@ public class Main {
 		      
 			}
 		  
-			//Las siguientes líneas sirven para mostrar todos los mensajes que hay en la lista
+			//Las siguientes líneas sirven para mostrar todos los mensajes que hay en la lista, luego las tendré que quitar
 			List<MessageMetadata> fullList = messageRegistry.getAllMessages();
 	      
 			List<String[]> showingList = messageRegistry.listConversionToString(fullList);

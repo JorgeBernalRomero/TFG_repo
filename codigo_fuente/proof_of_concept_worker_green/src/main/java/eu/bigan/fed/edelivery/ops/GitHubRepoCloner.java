@@ -2,12 +2,12 @@ package eu.bigan.fed.edelivery.ops;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
+import eu.bigan.fed.edelivery.utils.FileManager;
+
 
 public class GitHubRepoCloner implements BiganFedListener {
 
@@ -19,10 +19,10 @@ public class GitHubRepoCloner implements BiganFedListener {
 
         //System.out.println(taskContent);
 
-        String destDir = EnvParameters.getParameter("destDir");
+        /*String destDir = EnvParameters.getParameter("destDir");
 
         //Converting taskContent into an executable file
-        /*String filePath = destDir + "/" + messageId + "/" + "taskContentFile.sh";
+        String filePath = destDir + "/" + messageId + "/" + "cloning_repo.sh"; //solo cambio el nombre del .sh
         byte[] contentBytes = taskContent.getBytes();
         File file = new File(filePath);
         try{

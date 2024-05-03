@@ -1,12 +1,14 @@
 package eu.bigan.fed.edelivery.ops;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 import eu.bigan.fed.edelivery.utils.FileManager;
+import eu.bigan.fed.edelivery.utils.JsonGenerator;
 
 
 public class GitHubRepoCloner implements BiganFedListener {
@@ -17,14 +19,41 @@ public class GitHubRepoCloner implements BiganFedListener {
         //System.out.println("estoy dentro del handling callback y me ha llegado el siguiente taskContent:");
         logger.info("Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'");
 
-        //aquí messageID va a ser el task_green
-        //taskContent = "git@github.com:JorgeBernalRomero/proof_of_concept_eDelivery_repo.git"
+        //aquí messageID va a ser el task2_green
+        //taskContent = "git@github.com:JorgeBernalRomero/proof_of_concept_eDelivery_repo.git";
 
-        //montar una ejecución de un git clone de "git@github.com:JorgeBernalRomero/proof_of_concept_eDelivery_repo.git"
-        //guardando los results en un string para montar a posteirori el json de vueta
+        String outputCode = "";
 
+        try {
+            // Execute the git clone command directly
+            ProcessBuilder processBuilder = new ProcessBuilder("git", "clone", taskContent);
+            processBuilder.redirectErrorStream(true); //ver si redirijo la salida a un archivo y poner eso como resultspath
+            Process process = processBuilder.start();
+            int exitCode = process.waitFor();
 
-        //PENDIENTE IMPLEMENTACIÓN
+            if (exitCode == 0) {
+                outputCode = "0";
+                logger.info("El repositorio se ha clonado correctamente.");
+            } else {
+                outputCode = "1";
+                logger.info("No se ha conseguido clonar el repositorio.");
+            }
+        } catch (Exception e) {
+            logger.error("Ha habido un error en la ejecución del 'git clone'.");
+            e.printStackTrace();
+        }
+
+         //LO PONGO PARA COMPROBAR QUE TARDE MÁS UNA TAREA Y QUE EL COORDINADOR SI PASA DETERMINADO TIEMPO LA DESECHE
+        try {
+			TimeUnit.SECONDS.sleep(5); //si pongo 20 no llegan (coordinador está a 15) si pongo 5 si llegan
+            logger.info("Se ha producido un sleep de 5 segundos.");
+		} catch (InterruptedException e) {
+            logger.error("Ha habido un error en el sleep de 5 segundos.");
+			e.printStackTrace();
+		}
+
+        JsonGenerator jsonGenerator = new JsonGenerator();
+		jsonGenerator.generateJson("", outputCode, messageId); //results contiene el outputs.txt
 
 
         //System.out.println("termina funcion de callback");

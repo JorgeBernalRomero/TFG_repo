@@ -1,0 +1,103 @@
+13:51:23 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+13:51:23 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:51:23 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:51:23 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:51:24 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+13:51:24 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:51:24 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:51:24 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:51:24 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:51:24 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:51:24 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:52:32 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+13:52:32 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:52:32 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:52:32 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:52:32 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:52:32 ERROR eu.bigan.fed.edelivery.jms.MessageBroker - No ha sido posible gestionar el mensaje recibido en el onMessage.
+13:52:32 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+13:52:32 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:52:32 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:52:32 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:52:32 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:52:32 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:52:32 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:52:34 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:52:34 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+13:52:34 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+13:52:34 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+13:52:34 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:52:34 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+13:52:39 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:52:39 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+13:52:39 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'
+13:52:44 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:52:44 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+13:52:44 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+13:52:44 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+13:52:44 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:52:44 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+13:52:49 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:52:49 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+13:52:49 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Timeout excedido para el mensaje a procesar. No se llama a la función de callback.
+13:53:06 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+13:53:07 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:53:07 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:53:07 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:53:07 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+13:53:07 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:53:07 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:53:07 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:53:07 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:53:20 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+13:53:20 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:53:20 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:53:20 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:53:20 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+13:53:20 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:53:20 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:53:20 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:53:20 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:54:32 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+13:54:32 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:54:32 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:54:32 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:54:32 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+13:54:32 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:54:32 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:54:32 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:54:38 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:54:38 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+13:54:38 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'
+13:57:38 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+13:57:38 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:57:38 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:57:38 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:57:38 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+13:57:38 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:57:38 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:57:38 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:59:39 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+13:59:39 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:59:39 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:59:39 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:59:39 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:59:39 ERROR eu.bigan.fed.edelivery.jms.MessageBroker - No ha sido posible gestionar el mensaje recibido en el onMessage.
+13:59:39 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+13:59:39 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+13:59:39 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:00:08 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+14:00:08 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+14:00:08 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+14:00:08 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+14:00:08 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+14:00:08 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:00:08 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:00:59 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+14:00:59 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+14:00:59 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+14:00:59 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+14:00:59 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+14:00:59 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:00:59 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:00:59 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.

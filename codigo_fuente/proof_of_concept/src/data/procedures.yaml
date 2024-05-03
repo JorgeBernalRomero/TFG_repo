@@ -3,13 +3,18 @@ workers:
   - name: "domibus-green"
     actions:
       - name: "task1_green"
+        taskContent: "git@github.com:JorgeBernalRomero/proof_of_concept_eDelivery_repo.git"
+        worker_task: "eu.bigan.fed.edelivery.ops.GitHubRepoCloner"
+        callback: "eu.bigan.fed.edelivery.ops.ReplyRepoCloning"
+        timeout: "15"
+      - name: "task2_green"
         taskContent: |
           #!/bin/bash
           ls > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/greenNode/green_dest_dir/task1_green/outputs.txt
         worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
         callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
         timeout: "15"
-      - name: "task2_green"
+      - name: "task3_green"
         taskContent: |
           #!/bin/bash
           ps aux > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/greenNode/green_dest_dir/task2_green/outputs.txt

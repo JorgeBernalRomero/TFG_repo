@@ -26,10 +26,16 @@ public class JsonGenerator {
     	final Logger logger = LogManager.getLogger(JsonGenerator.class);
 
         String results = "";
-        try {
-            results = FileManager.readFileAsString(resultsPath);
-        } catch (IOException e) {
-            e.printStackTrace();
+        
+        if(resultsPath != ""){
+            try {
+                results = FileManager.readFileAsString(resultsPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            results = resultsPath;
         }
 
     	JSONObject jsonObject = new JSONObject();

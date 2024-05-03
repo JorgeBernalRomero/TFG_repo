@@ -61,21 +61,32 @@ public class SaveToFiles implements BiganFedListener{
 	              saveDir.mkdirs();
 	          }
 	          
-	          
 	          File destinationFile = new File(saveDir, "payload_1");
 	          FileManager.writeBytesToFile(destinationFile, m.getBytes("payload_1"));
 	          //System.out.println("File saved to: " + destinationFile.getAbsolutePath());
-	          logger.info("Archivo guardado correctamente.");
+	          logger.info("Archivo 'payload_1' guardado correctamente.");
 	          
-	          
-	          //ahora mismo tengo en payload_1 el archivo .json que he recibido
-	          //tengo que leer el .json, extraer los dos campos y guardar en un results.txt el contenido de la variable results, fijarme tb en outputCode para ver qué hacer
-	          
-	          /*ReaderJsonContent reader = new ReaderJsonContent();
+	          ReaderJsonContent reader = new ReaderJsonContent();
               reader.readJsonContentFromFile(destinationFile.getAbsolutePath());
 
               String results = reader.getResults();
-              String outputCode = reader.getOutputCode();*/
+              String outputCode = reader.getOutputCode();
+              int outputCodeAsInt = Integer.parseInt(outputCode);
+              
+              if (outputCodeAsInt == 0) {
+                  String filePath = saveDir + "/" + "outputs.txt";
+                  byte[] contentBytes = results.getBytes();
+                  File file = new File(filePath);
+                  try{
+                      FileManager.writeBytesToFile(file, contentBytes);
+                  } catch (Exception e) {
+                      e.printStackTrace();
+                  }
+                  logger.info("Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.");
+              }
+              else { //outputCode == "1" --> error
+            	  logger.error("Ha habido un problema con la tarea" + messageId + "en el nodo worker. El campo 'results' del 'payload_1' está vacío.");
+              }
 	          
        		}
 	
@@ -88,5 +99,4 @@ public class SaveToFiles implements BiganFedListener{
           e.printStackTrace();
       }
    }
-  
 }

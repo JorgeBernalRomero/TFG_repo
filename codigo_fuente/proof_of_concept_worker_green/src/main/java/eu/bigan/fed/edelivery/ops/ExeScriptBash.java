@@ -77,7 +77,6 @@ public class ExeScriptBash implements BiganFedListener{
         JsonGenerator jsonGenerator = new JsonGenerator();
 		jsonGenerator.generateJson(resultsPath, outputCode, messageId); //results contiene el outputs.txt
 
-
         //System.out.println("termina funcion de callback");
     }
 }

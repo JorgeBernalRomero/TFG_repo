@@ -101,3 +101,27 @@
 14:00:59 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
 14:00:59 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
 14:00:59 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+16:07:41 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+16:07:41 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+16:07:41 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+16:07:41 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+16:07:41 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+16:07:41 ERROR eu.bigan.fed.edelivery.jms.MessageBroker - No ha sido posible gestionar el mensaje recibido en el onMessage.
+16:07:41 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+16:07:41 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+16:07:42 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+16:07:42 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+16:07:49 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+16:07:49 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+16:07:49 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'
+16:08:21 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+16:08:22 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+16:08:22 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+16:08:22 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+16:08:22 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+16:08:22 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+16:08:22 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+16:08:22 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+16:08:29 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+16:08:29 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+16:08:29 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'

@@ -23,7 +23,7 @@ public class ReplyRepoCloning implements BiganFedListener{
       System.out.println("estoy dentro del handling callback del ReplyRepoCloning");
 	  logger.info("Estoy dentro de la función de callback asignada 'ReplyRepoCloning'");
       
-      
+      //aquí entra correctamente...
 	  
 	  //PENDIENTE IMPLEMENTACIÓN
 	  

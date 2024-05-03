@@ -40,6 +40,8 @@ public class ExeScriptBash implements BiganFedListener{
             e.printStackTrace();
         }
 
+        String outputCode = "";
+
         try {
             ProcessBuilder processBuilder = new ProcessBuilder("/bin/bash", filePath);
             processBuilder.redirectErrorStream(true);
@@ -47,10 +49,12 @@ public class ExeScriptBash implements BiganFedListener{
             int exitCode = process.waitFor();
             if(exitCode == 0) {
                 //System.out.println("exe correct");
+                outputCode = "0";
                 logger.info("Correcta ejecución del script.");
             }
             else {
                 //System.out.println("exe incorrect");
+                outputCode = "1";
                 logger.info("Incorrecta ejecución del script.");
             }
         } catch (Exception e) {
@@ -66,6 +70,13 @@ public class ExeScriptBash implements BiganFedListener{
             logger.error("Ha habido un error en el sleep de 5 segundos.");
 			e.printStackTrace();
 		}
+
+        String resultsPath = EnvParameters.getParameter("destDir");
+        resultsPath += "/" + messageId + "/" + "outputs.txt";
+
+        JsonGenerator jsonGenerator = new JsonGenerator();
+		jsonGenerator.generateJson(resultsPath, outputCode, messageId); //results contiene el outputs.txt
+
 
         //System.out.println("termina funcion de callback");
     }

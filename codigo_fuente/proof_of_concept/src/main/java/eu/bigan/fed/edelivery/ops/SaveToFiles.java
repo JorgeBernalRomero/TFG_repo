@@ -5,6 +5,8 @@ import javax.jms.MapMessage;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 import eu.bigan.fed.edelivery.utils.FileManager;
+import eu.bigan.fed.edelivery.utils.ReaderJsonContent;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -58,10 +60,23 @@ public class SaveToFiles implements BiganFedListener{
 	          if (!saveDir.exists()) {
 	              saveDir.mkdirs();
 	          }
+	          
+	          
 	          File destinationFile = new File(saveDir, "payload_1");
 	          FileManager.writeBytesToFile(destinationFile, m.getBytes("payload_1"));
 	          //System.out.println("File saved to: " + destinationFile.getAbsolutePath());
 	          logger.info("Archivo guardado correctamente.");
+	          
+	          
+	          //ahora mismo tengo en payload_1 el archivo .json que he recibido
+	          //tengo que leer el .json, extraer los dos campos y guardar en un results.txt el contenido de la variable results, fijarme tb en outputCode para ver qué hacer
+	          
+	          /*ReaderJsonContent reader = new ReaderJsonContent();
+              reader.readJsonContentFromFile(destinationFile.getAbsolutePath());
+
+              String results = reader.getResults();
+              String outputCode = reader.getOutputCode();*/
+	          
        		}
 	
 	      else{

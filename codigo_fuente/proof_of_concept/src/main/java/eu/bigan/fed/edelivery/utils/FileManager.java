@@ -1,9 +1,6 @@
 package eu.bigan.fed.edelivery.utils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 /**
  * Texto sobre lo que hace esta clase.
@@ -40,6 +37,7 @@ public class FileManager{
         }
     }
 
+    
     /**
      * 
      * @param receivedFile
@@ -51,5 +49,4 @@ public class FileManager{
             fos.write(fileBytes);
         }
     }
-    
 }

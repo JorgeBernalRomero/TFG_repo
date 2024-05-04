@@ -45,7 +45,7 @@ public class Main {
 
       
 		if(!processList.isEmpty()) {
-			for (int i = 0; i < 1 ; i++) { //processList.size()
+			for (int i = 0; i < processList.size() ; i++) {
 				String[] process = processList.get(i);
 				
 				//este print lo dejo a modo de debugging de momento

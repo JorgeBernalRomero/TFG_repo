@@ -65,7 +65,7 @@ public class Sender{
             messageMap.setStringProperty("payload_1_description", "message");
 
             String sendingFile = EnvParameters.getParameter("destDir");
-            sendingFile += "/" + messageId + "/" + "outputs.txt";
+            sendingFile += "/" + messageId + "/" + "returnJson.json"; //antes había aquí un outputs.txt
 
 			File file = new File(sendingFile);
 

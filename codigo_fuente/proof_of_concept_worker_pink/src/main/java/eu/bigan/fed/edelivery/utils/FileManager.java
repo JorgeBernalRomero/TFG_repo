@@ -1,9 +1,6 @@
 package eu.bigan.fed.edelivery.utils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 /**
  * Texto sobre lo que hace esta clase.
@@ -34,12 +31,39 @@ public class FileManager{
         }
     }
 
+    
     /**
      * 
      */
     public static void writeBytesToFile(File receivedFile, byte[] fileBytes) throws IOException {
         try(FileOutputStream fos = new FileOutputStream(receivedFile)){
             fos.write(fileBytes);
+        }
+    }
+
+
+    /**
+     * 
+     * @param pathToFile
+     * @return
+     * @throws IOException
+     */
+    public static String readFileAsString(String pathToFile) throws IOException {
+        try (FileReader fileReader = new FileReader(pathToFile)) {
+            BufferedReader br = new BufferedReader(fileReader);
+            StringBuilder contenido = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                contenido.append(line).append("\n");
+            }
+            br.close();
+            
+            return contenido.toString();
+          
+        } catch (IOException e) {
+            e.printStackTrace();
+            
+            return "";
         }
     }
 }

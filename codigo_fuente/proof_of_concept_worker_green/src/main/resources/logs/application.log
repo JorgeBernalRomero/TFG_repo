@@ -1,146 +1,90 @@
-13:49:03 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-13:49:03 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-13:49:03 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-13:49:03 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:49:03 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:49:03 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:49:03 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-13:49:25 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-13:49:25 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-13:49:25 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-13:49:25 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:49:25 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:49:25 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:49:25 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-13:49:25 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - No se ha conseguido clonar el repositorio.
-13:51:17 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-13:51:18 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-13:51:18 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-13:51:18 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:51:18 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:51:18 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:51:18 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-13:52:23 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-13:52:23 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-13:52:23 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-13:52:23 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:52:23 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:52:23 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:52:23 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-13:52:23 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - No se ha conseguido clonar el repositorio.
-13:52:28 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-13:52:28 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-13:52:28 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-13:52:28 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-13:52:28 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:52:28 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:52:28 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:52:28 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
-13:52:28 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Correcta ejecución del script.
-13:52:33 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-13:52:33 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-13:52:33 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-13:52:33 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-13:52:33 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:52:33 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:52:33 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:52:33 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-13:52:33 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - No se ha conseguido clonar el repositorio.
-13:52:38 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-13:52:38 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-13:52:38 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-13:52:38 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-13:52:38 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:52:38 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:52:38 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:52:38 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
-13:52:38 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Correcta ejecución del script.
-13:52:43 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-13:52:43 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-13:52:43 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-13:52:43 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-13:52:43 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:52:43 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:52:43 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:52:43 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-13:52:43 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - No se ha conseguido clonar el repositorio.
-13:52:48 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-13:52:48 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-13:52:48 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-13:52:48 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-13:53:24 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-13:53:24 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-13:53:24 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-13:54:29 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-13:54:29 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-13:54:29 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-13:54:33 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:54:33 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:54:33 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:54:33 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-13:54:33 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - No se ha conseguido clonar el repositorio.
-13:54:38 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-13:54:38 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-13:54:38 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-13:54:38 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-13:57:31 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-13:57:32 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-13:57:32 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-13:57:39 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-13:57:39 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-13:57:39 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-13:57:39 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-13:58:29 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - No se ha conseguido clonar el repositorio.
-13:58:34 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-13:58:34 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-13:58:34 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-13:58:34 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-14:00:01 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-14:00:02 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-14:00:02 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-14:00:44 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-14:00:44 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-14:00:44 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-14:00:59 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-14:00:59 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-14:00:59 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-14:00:59 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-16:06:32 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-16:06:32 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-16:06:32 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-16:06:32 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-16:06:32 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-16:06:32 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-16:06:32 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-16:06:34 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - El repositorio se ha clonado correctamente.
-16:06:39 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-16:06:39 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-16:06:39 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-16:06:40 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-16:07:09 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-16:07:09 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-16:07:09 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-16:07:42 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-16:07:42 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-16:07:42 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-16:07:42 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-16:07:44 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - El repositorio se ha clonado correctamente.
-16:07:49 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-16:07:49 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-16:07:49 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-16:07:49 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
-16:07:59 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-16:08:00 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-16:08:00 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-16:08:14 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
-16:08:14 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
-16:08:14 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
-16:08:22 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
-16:08:22 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
-16:08:22 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
-16:08:22 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
-16:08:24 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - El repositorio se ha clonado correctamente.
-16:08:29 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
-16:08:29 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
-16:08:29 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
-16:08:29 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:47:07 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
+13:47:08 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:47:08 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:49:02 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
+13:49:02 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:49:02 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:49:11 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:49:11 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:49:11 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:49:11 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
+13:49:11 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Incorrecta ejecución del script.
+13:49:16 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
+13:49:16 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:49:16 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:49:16 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:49:16 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:49:16 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:49:16 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:49:16 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
+13:49:18 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - El repositorio se ha clonado correctamente.
+13:49:23 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
+13:49:23 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:49:23 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:49:23 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:49:23 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:49:23 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:49:23 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:49:23 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
+13:49:23 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Correcta ejecución del script.
+13:49:28 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
+13:49:28 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:49:28 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:49:28 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:51:58 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
+13:51:58 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:51:58 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:52:12 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:52:12 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:52:12 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:52:12 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
+13:52:12 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Incorrecta ejecución del script.
+13:52:17 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
+13:52:17 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:52:17 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:52:17 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:52:17 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:52:17 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:52:17 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:52:17 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
+13:52:19 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - El repositorio se ha clonado correctamente.
+13:52:24 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
+13:52:24 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:52:24 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:52:24 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:52:24 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:52:24 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:52:24 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:52:24 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
+13:52:24 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Correcta ejecución del script.
+13:52:29 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Se ha producido un sleep de 5 segundos.
+13:52:29 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:52:29 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:52:29 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:58:19 INFO  eu.bigan.fed.poc.Main - Comienza el worker.
+13:58:20 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+13:58:20 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+13:58:33 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:58:33 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:58:33 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:58:33 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'
+13:58:35 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - El repositorio se ha clonado correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:58:35 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:58:35 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
+13:58:35 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Correcta ejecución del script.
+13:58:35 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+13:58:35 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El fichero se ha guardado correctamente.
+13:58:35 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+13:58:35 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Estoy dentro de la función de callback asignada 'exeScriptBash'
+13:58:36 INFO  eu.bigan.fed.edelivery.ops.ExeScriptBash - Correcta ejecución del script.
+13:58:36 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+13:58:36 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+13:58:36 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.

@@ -6,7 +6,6 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 
 public class send_and_server {
-    //Class for files management
 	public static class FileManager {
 		public static byte[] readFileAsBytes(File file) throws IOException {
 			try (RandomAccessFile accessFile = new RandomAccessFile(file, "r")){
@@ -32,11 +31,10 @@ public class send_and_server {
 
 
 
-    //Function which makes node to listen and await for the income message
 	public static void listening (Session session){
 		try{
 			MessageConsumer consumer = session.createConsumer(session.createQueue("domibus.backend.jms.outQueue"));
-			Message msg = consumer.receive(); //podríamos poner 10000 que serían 10 segundos
+			Message msg = consumer.receive();
 		    System.out.println(msg);
 
 			MapMessage m = (MapMessage) msg;
@@ -45,7 +43,7 @@ public class send_and_server {
 				System.out.println(m.getBytes("payload_1"));
 				System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
 
-				String saveDirectory = "/root/TFG/recepcionResults"; //esta parte se podría sustituir pasando el dirDestino por parámetro
+				String saveDirectory = "/root/TFG/recepcionResults";
 				File saveDir = new File(saveDirectory);
 				if (!saveDir.exists()) {
         			saveDir.mkdirs();
@@ -77,8 +75,6 @@ public class send_and_server {
 
 
 
-
-
     public static void sending(Session session){
 		try{
 
@@ -93,9 +89,9 @@ public class send_and_server {
 			messageMap.setStringProperty("service","bdx:noprocess");
 			messageMap.setStringProperty("serviceType","tc1");
 			messageMap.setStringProperty("action", "TC1Leg1");
-			messageMap.setStringProperty("fromPartyId", "domibus-blue"); //nodo inicial
+			messageMap.setStringProperty("fromPartyId", "domibus-blue");
 			messageMap.setStringProperty("fromPartyType", "urn:oasis:names:tc:ebcore:partyid-type:unregistered");
-			messageMap.setStringProperty("toPartyId", "domibus-pink"); //nodo destino (cambiar a domibus-green o al nombre que sea)
+			messageMap.setStringProperty("toPartyId", "domibus-pink");
 			messageMap.setStringProperty("toPartyType", "urn:oasis:names:tc:ebcore:partyid-type:unregistered");
 			messageMap.setStringProperty("fromRole", "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator");
 			messageMap.setStringProperty("toRole", "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder");
@@ -105,13 +101,11 @@ public class send_and_server {
 			messageMap.setJMSCorrelationID("12345");
 			messageMap.setStringProperty("totalNumberOfPayloads", "1");
 
-			//messageMap.setStringProperty("payload_1_mimeContentId", "cid:file-attached");
 			messageMap.setStringProperty("payload_1_mimeContentId", "cid:message");
 			messageMap.setStringProperty("payload_1_mimeType", "text/xml");
 			messageMap.setStringProperty("payload_1_description", "message");
 
-			//Sending a file from one node to another works (testing script)
-            File file = new File("/root/TFG/envioScripts/script.sh"); //directorio puede modificarse o por parámetro???
+            File file = new File("/root/TFG/envioScripts/script.sh");
 			messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
 
 			producer.send(messageMap);
@@ -125,22 +119,17 @@ public class send_and_server {
 
 
 
-
-    //main code
 	public static void main(String[] args){
 		try{
-			//Connecting to the ActiveMQ connection factory
-			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://1.44.4.88:61616"); //URL del servidor ActiveMQ
+			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://1.44.4.88:61616");
 			Connection connection = null;
 
-			connection = connectionFactory.createConnection("admin", "123456"); //username and password of the default JMS broker
+			connection = connectionFactory.createConnection("admin", "123456");
 			connection.start();
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
-			//Calling function
 			sending(session);
 
-			//Calling function
 			listening(session);
 
 			connection.close();

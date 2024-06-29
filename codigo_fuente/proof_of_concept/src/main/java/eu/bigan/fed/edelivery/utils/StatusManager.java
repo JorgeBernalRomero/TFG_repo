@@ -1,17 +1,13 @@
 package eu.bigan.fed.edelivery.utils;
 
-
 public class StatusManager{
-	private int status;
+	private static int statusSM = 0;
 	
-	public StatusManager(int status) {
-		this.status=status;
+	public static int getStatus() {
+		return statusSM;
 	}
 	
-	public int getStatus() {
-		return status;
+	public static void setStatus(int status){
+		StatusManager.statusSM = status;
 	}
-	
-	//PENDIENTE IMPLEMENTAR
-	
 }

@@ -39,7 +39,6 @@ public class Main {
   
 		YamlReader yamlReader = new YamlReader();
 		List<String[]> processList = yamlReader.read();
-
       
 		if(!processList.isEmpty()) {
 			for (int i = 0; i < processList.size() ; i++) {
@@ -88,16 +87,20 @@ public class Main {
 				timeoutThread.start();
 				messageThread.start();
 				
-				
-				//antes de tener la máquina de estados es necesario poner el siguiente sleep
-				try {
-				TimeUnit.SECONDS.sleep(5);
-	            logger.info("Se ha producido un sleep de 5 segundos.");
-				} catch (InterruptedException e) {
-	            logger.error("Ha habido un error en el sleep de 5 segundos.");
-				e.printStackTrace();
-			}
-				
+				if (i == 0 || i == 3) {
+					int statusSMaux = StatusManager.getStatus();
+					while(statusSMaux == 0){
+						try {
+							TimeUnit.SECONDS.sleep(5);
+				            logger.info("Se ha producido un sleep de 5 segundos.");
+						} catch (InterruptedException e) {
+				            logger.error("Ha habido un error en el sleep de 5 segundos.");
+							e.printStackTrace();
+						}
+						statusSMaux = StatusManager.getStatus();
+					}
+					StatusManager.setStatus(0);
+				}
 			}
 		  
 			//Las siguientes líneas sirven para mostrar todos los mensajes que hay en la lista, luego las tendré que quitar

@@ -7,6 +7,7 @@ import eu.bigan.fed.edelivery.message.BiganFedListener;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 import eu.bigan.fed.edelivery.utils.FileManager;
 import eu.bigan.fed.edelivery.utils.ReaderJsonContent;
+import eu.bigan.fed.edelivery.utils.StatusManager;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -81,6 +82,7 @@ public class ReplyRepoCloning implements BiganFedListener{
               
               if (outputCodeAsInt == 0) {
                   logger.info("La tarea de clonación " + messageId + " se ha completado correctamente en el nodo " + fromNodeID + ". Resultados de la ejecución en outputs.txt.");
+                  StatusManager.setStatus(1);
               }
               else {
             	  logger.error("La tarea de clonación " + messageId + " no se ha completado correctamente en el nodo " + fromNodeID + ". Resultados de la ejecución fallida en outputs.txt.");
@@ -93,8 +95,6 @@ public class ReplyRepoCloning implements BiganFedListener{
       } catch (Exception e) {
     	  logger.error("Ha habido un error en la gestión del archivo.");
           e.printStackTrace();
-      }
-	  
+      }  
    }
-  
 }

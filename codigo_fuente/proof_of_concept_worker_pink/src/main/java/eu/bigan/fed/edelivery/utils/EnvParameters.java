@@ -59,7 +59,6 @@ public class EnvParameters {
 			Locale locale) throws EdeliveryException {
 		PropertyResourceBundle propertyRB = null;
 
-		// Leer el fichero de propiedades
 		try {
 			if (locale == null) {
 				propertyRB = (PropertyResourceBundle) PropertyResourceBundle
@@ -74,7 +73,6 @@ public class EnvParameters {
 			throw new EdeliveryException(msg, me);
 		}
 
-		// Recuperar propiedades
 		Enumeration<String> keys = propertyRB.getKeys();
 		String aKey = null;
 		parameters.clear();
@@ -124,5 +122,4 @@ public class EnvParameters {
 			throws EdeliveryException {
 		parameters.setProperty(code, value);
 	}
-
 }

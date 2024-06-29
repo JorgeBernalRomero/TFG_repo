@@ -39,7 +39,7 @@ public class JsonGenerator {
         }
 
     	JSONObject jsonObject = new JSONObject();
-        jsonObject.put("results", results); //aquí tiene que ir todo el contenido del fichero results
+        jsonObject.put("results", results);
         jsonObject.put("outputCode", outputCode);
         String jsonContent = jsonObject.toString();
         
@@ -58,5 +58,4 @@ public class JsonGenerator {
             e.printStackTrace();
         }
     }
-
 }

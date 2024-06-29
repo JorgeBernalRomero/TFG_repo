@@ -19,10 +19,6 @@ public class Main {
 
 		final Logger logger = LogManager.getLogger(Main.class);
 		
-		//logger.info("Mensaje de información sacado por el logger.");
-		//logger.error("Mensaje de error sacado por el logger.");
-
-		//System.out.println("hola estoy en el main de los workers");
 		logger.info("Comienza el worker.");
 
 		SessionBuilder sessionBuilder = new SessionBuilder();

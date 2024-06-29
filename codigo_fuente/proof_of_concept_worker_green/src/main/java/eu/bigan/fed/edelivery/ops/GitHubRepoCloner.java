@@ -16,7 +16,6 @@ public class GitHubRepoCloner implements BiganFedListener {
     public void handleCallback(String taskContent, String messageId) {
         final Logger logger = LogManager.getLogger(ExeScriptBash.class);
 
-        //System.out.println("estoy dentro del handling callback y me ha llegado el siguiente taskContent:");
         logger.info("Estoy dentro de la función de callback asignada 'GitHubRepoCloner.handleCallback'");
 
         String outputCode = "";
@@ -35,7 +34,7 @@ public class GitHubRepoCloner implements BiganFedListener {
             }
             
             ProcessBuilder processBuilder = new ProcessBuilder("git", "clone", taskContent, targetDir).redirectOutput(new File(outputFile));;
-            processBuilder.redirectErrorStream(true); //ver si redirijo la salida a un archivo y poner eso como resultspath
+            processBuilder.redirectErrorStream(true);
             Process process = processBuilder.start();
             int exitCode = process.waitFor();
 
@@ -52,22 +51,10 @@ public class GitHubRepoCloner implements BiganFedListener {
             e.printStackTrace();
         }
 
-         //LO PONGO PARA COMPROBAR QUE TARDE MÁS UNA TAREA Y QUE EL COORDINADOR SI PASA DETERMINADO TIEMPO LA DESECHE
-        /*try {
-			TimeUnit.SECONDS.sleep(5); //si pongo 20 no llegan (coordinador está a 15) si pongo 5 si llegan
-            logger.info("Se ha producido un sleep de 5 segundos.");
-		} catch (InterruptedException e) {
-            logger.error("Ha habido un error en el sleep de 5 segundos.");
-			e.printStackTrace();
-		}*/
-
-
         String resultsPath = EnvParameters.getParameter("destDir");
         resultsPath += "/" + messageId + "/" + "outputs.txt";
 
         JsonGenerator jsonGenerator = new JsonGenerator();
-		jsonGenerator.generateJson(resultsPath, outputCode, messageId); //results contiene el outputs.txt
-
-        //System.out.println("termina funcion de callback");
+		jsonGenerator.generateJson(resultsPath, outputCode, messageId);
     }
 }

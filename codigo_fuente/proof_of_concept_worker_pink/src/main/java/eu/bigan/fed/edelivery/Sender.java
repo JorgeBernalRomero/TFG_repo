@@ -35,7 +35,6 @@ public class Sender{
         final Logger logger = LogManager.getLogger(Sender.class);
 
         try{
-            //System.out.println("I'm in the sending now!");
 
             MapMessage messageMap = session.createMapMessage();
 
@@ -46,10 +45,9 @@ public class Sender{
             messageMap.setStringProperty("action", "TC1Leg1");
 
             String nodeName = EnvParameters.getParameter("nodeName");
-            messageMap.setStringProperty("fromPartyId", nodeName); //nodo inicial
-            
+            messageMap.setStringProperty("fromPartyId", nodeName);
             messageMap.setStringProperty("fromPartyType", "urn:oasis:names:tc:ebcore:partyid-type:unregistered");
-            messageMap.setStringProperty("toPartyId", destinationNode); //nodo destino
+            messageMap.setStringProperty("toPartyId", destinationNode);
             messageMap.setStringProperty("toPartyType", "urn:oasis:names:tc:ebcore:partyid-type:unregistered");
             messageMap.setStringProperty("fromRole", "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator");
             messageMap.setStringProperty("toRole", "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder");
@@ -59,22 +57,18 @@ public class Sender{
             messageMap.setStringProperty("conversationId", messageId);
             messageMap.setStringProperty("totalNumberOfPayloads", "1");
 
-            //messageMap.setStringProperty("payload_1_mimeContentId", "cid:file-attached");
             messageMap.setStringProperty("payload_1_mimeContentId", "cid:message");
             messageMap.setStringProperty("payload_1_mimeType", "text/xml");
             messageMap.setStringProperty("payload_1_description", "message");
 
             String sendingFile = EnvParameters.getParameter("destDir");
-            sendingFile += "/" + messageId + "/" + "returnJson.json"; //antes había aquí un outputs.txt
+            sendingFile += "/" + messageId + "/" + "returnJson.json";
 
 			File file = new File(sendingFile);
 
             messageMap.setBytes("payload_1", FileManager.readFileAsBytes(file));
 
             producer.send(messageMap);
-           
-            //System.out.println("Sending message content is the following!");
-            //System.out.println(messageMap);
 
             logger.info("El envío se ha realizado correctamente.");
         }

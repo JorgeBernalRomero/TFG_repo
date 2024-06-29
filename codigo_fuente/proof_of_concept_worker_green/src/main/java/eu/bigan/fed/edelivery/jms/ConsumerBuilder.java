@@ -29,8 +29,6 @@ public class ConsumerBuilder {
 			Queue queue = session.createQueue(EnvParameters.getParameter("outQueue"));
 			consumer = session.createConsumer(queue, "", true);
 			consumer.setMessageListener((MessageListener) new MessageBroker(session));
-			
-			//System.out.println("acabo de crear el consumer");
 
 			logger.info("El consumer se ha creado correctamente.");
 

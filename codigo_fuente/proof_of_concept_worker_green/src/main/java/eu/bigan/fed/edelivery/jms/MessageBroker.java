@@ -36,9 +36,6 @@ public class MessageBroker implements MessageListener {
         final Logger logger = LogManager.getLogger(MessageBroker.class);
 
 	    try {
-            //System.out.println("Beggining of the received message.");
-            //System.out.println(msg);
-            //System.out.println("End of the received message.");
 
             logger.info("Recibo correctamente el mensaje en el onMessage.");
 
@@ -46,21 +43,14 @@ public class MessageBroker implements MessageListener {
             
             if (msg instanceof MapMessage) {
 
-            	//System.out.println(msg.getJMSMessageID());
-                //System.out.println(m.getBytes("payload_1"));
-                //System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
-
                 String fromNodeID = m.getStringProperty("fromPartyId");    
-                //System.out.println(fromNodeID);
                 
                 String messageId = m.getStringProperty("conversationId");
-                //System.out.println(messageId);
 
                 String destDir = EnvParameters.getParameter("destDir");
 
                 String saveDir = destDir + "/" + messageId;
 
-                //crer un nuevo saveDir
                 File finalDir = new File(saveDir);
 				if (!finalDir.exists()) {
         			finalDir.mkdirs();
@@ -68,7 +58,6 @@ public class MessageBroker implements MessageListener {
 
                 File destinationFile = new File(finalDir, "payload_1");
 				FileManager.writeBytesToFile(destinationFile, m.getBytes("payload_1"));
-        		//System.out.println("File saved to: " + destinationFile.getAbsolutePath());
                 logger.info("El fichero se ha guardado correctamente.");
 
 
@@ -78,10 +67,6 @@ public class MessageBroker implements MessageListener {
                 String taskContent = reader.getTaskContent();
                 String workerTask = reader.getWorkerTask();
 
-                //System.out.println(taskContent);
-                //System.out.println(workerTask);
-
-                //ahora hay que llamar a la función de callback que me hace lo que yo quiero
                 String callbackClassName = workerTask;
 		        BiganFedListener callback = null;
 		      
@@ -94,22 +79,17 @@ public class MessageBroker implements MessageListener {
 
                 callback.handleCallback(taskContent, messageId);
 
-                //Una vez termina la función de callback, paso a enviar los resultados
                 Sender sender = new Sender(session);
 	            sender.send(fromNodeID, messageId);
                 
                 
             } else{
-                //System.out.println("No Message Found!");
                 logger.error("Mensaje inválido.");
             }
 
-            //System.out.println("fin");
         } catch (Exception e) {
             logger.error("No ha sido posible gestionar el mensaje recibido en el onMessage.");
             e.printStackTrace();
         }		
-
 	}
-
 }

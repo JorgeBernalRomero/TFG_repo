@@ -1,6 +1,8 @@
 package eu.bigan.fed.poc;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import javax.jms.Session;
 import eu.bigan.fed.edelivery.jms.*;
 import eu.bigan.fed.edelivery.message.*;
@@ -95,7 +97,17 @@ public class Main {
 				// Iniciar los hilos simultáneamente
 				timeoutThread.start();
 				messageThread.start();
-		      
+				
+				
+				//antes de tener la máquina de estados es necesario poner el siguiente sleep
+				try {
+				TimeUnit.SECONDS.sleep(5); //si pongo 20 no llegan (coordinador está a 15) si pongo 5 si llegan
+	            logger.info("Se ha producido un sleep de 5 segundos.");
+				} catch (InterruptedException e) {
+	            logger.error("Ha habido un error en el sleep de 5 segundos.");
+				e.printStackTrace();
+			}
+				
 			}
 		  
 			//Las siguientes líneas sirven para mostrar todos los mensajes que hay en la lista, luego las tendré que quitar

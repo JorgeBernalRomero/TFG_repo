@@ -46,7 +46,7 @@ public class GitHubRepoCloner implements BiganFedListener {
                 outputCode = "1";
                 logger.info("No se ha conseguido clonar el repositorio.");
             }
-            
+
         } catch (Exception e) {
             logger.error("Ha habido un error en la ejecución del 'git clone'.");
             e.printStackTrace();

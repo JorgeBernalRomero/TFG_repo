@@ -171,3 +171,172 @@
 13:58:36 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
 13:58:36 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
 13:58:36 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:07:11 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+14:07:12 ERROR eu.bigan.fed.edelivery.jms.SessionBuilder - Ha habido un problema en la creación de la sesión.
+14:13:05 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+14:13:05 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+14:13:05 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+14:13:05 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+14:13:05 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+14:13:05 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:13:05 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:13:05 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:13:05 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:13:05 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:13:05 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:13:05 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:13:05 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:13:05 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:13:17 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:13:17 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:13:17 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:13:17 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:13:17 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:13:17 ERROR eu.bigan.fed.edelivery.ops.SaveToFiles - Ha habido un problema con la tareatask2_greenen el nodo worker. El campo 'results' del 'payload_1' está vacío.
+14:13:17 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:13:17 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:13:17 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:13:17 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:13:17 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:13:17 ERROR eu.bigan.fed.edelivery.ops.SaveToFiles - Ha habido un problema con la tareatask3_greenen el nodo worker. El campo 'results' del 'payload_1' está vacío.
+14:13:18 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:13:18 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:13:18 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'
+14:13:18 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Archivo 'payload_1' guardado correctamente.
+14:13:18 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:13:18 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - La tarea de clonación task1_green se ha completado correctamente en el nodo domibus-green. Resultados de la ejecución en outputs.txt.
+14:17:03 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+14:17:03 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+14:17:03 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+14:17:03 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+14:17:03 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+14:17:03 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:17:03 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:17:03 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:17:05 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:17:05 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:17:05 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'
+14:17:05 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Archivo 'payload_1' guardado correctamente.
+14:17:05 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:17:05 ERROR eu.bigan.fed.edelivery.ops.ReplyRepoCloning - La tarea de clonación task1_green no se ha completado correctamente en el nodo domibus-green. Resultados de la ejecución fallida en outputs.txt.
+14:17:08 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:17:08 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:17:08 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:17:08 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:17:09 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:17:09 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:17:09 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:17:09 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:17:09 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:17:09 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:17:13 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:17:13 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:17:13 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:17:13 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:17:15 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:17:15 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:17:15 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:17:15 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:17:15 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:17:15 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:17:18 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:18:38 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+14:18:39 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+14:18:39 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+14:18:39 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+14:18:40 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+14:18:40 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:18:40 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:18:40 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:18:43 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:18:43 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:18:43 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'
+14:18:43 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Archivo 'payload_1' guardado correctamente.
+14:18:43 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:18:43 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - La tarea de clonación task1_green se ha completado correctamente en el nodo domibus-green. Resultados de la ejecución en outputs.txt.
+14:18:45 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:18:45 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:18:45 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:18:45 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:18:45 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:18:45 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:18:45 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:18:45 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:18:45 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:18:45 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:18:50 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:18:50 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:18:50 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:18:50 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:18:53 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:18:53 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:18:53 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:18:53 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:18:53 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:18:53 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:18:55 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:32:33 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+14:32:33 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+14:32:33 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+14:32:33 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+14:32:33 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+14:32:33 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:32:33 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:32:33 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:32:36 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:32:36 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:32:36 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'
+14:32:36 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Archivo 'payload_1' guardado correctamente.
+14:32:36 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:32:36 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - La tarea de clonación task1_green se ha completado correctamente en el nodo domibus-green. Resultados de la ejecución en outputs.txt.
+14:32:38 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:32:38 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:32:38 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:32:38 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:32:39 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:32:39 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:32:39 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:32:39 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:32:39 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:32:39 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:32:43 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:32:43 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:32:43 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:32:43 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:32:44 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:32:44 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:32:44 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:32:44 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:32:44 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:32:44 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:32:48 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:32:48 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:32:48 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:32:48 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:32:53 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:32:53 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:32:53 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:32:53 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:32:56 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:32:56 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:32:56 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Estoy dentro de la función de callback asignada 'ReplyRepoCloning'
+14:32:56 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - Archivo 'payload_1' guardado correctamente.
+14:32:56 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:32:56 INFO  eu.bigan.fed.edelivery.ops.ReplyRepoCloning - La tarea de clonación task1_pink se ha completado correctamente en el nodo domibus-pink. Resultados de la ejecución en outputs.txt.
+14:32:56 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:32:56 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:32:56 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:32:56 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:32:56 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:32:56 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:32:58 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.
+14:32:58 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+14:32:58 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+14:32:58 INFO  eu.bigan.fed.edelivery.Sender - El envío se ha realizado correctamente.
+14:32:59 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - Recibo correctamente el mensaje en el onMessage.
+14:32:59 INFO  eu.bigan.fed.edelivery.jms.MessageBroker - El mensaje ha sido encontrado en la lista de mensajes.
+14:32:59 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Estoy dentro de la función de callback asignada 'saveToFiles'
+14:32:59 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
+14:32:59 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
+14:32:59 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+14:33:03 INFO  eu.bigan.fed.poc.Main - Se ha producido un sleep de 5 segundos.

@@ -8,16 +8,12 @@ workers:
         callback: "eu.bigan.fed.edelivery.ops.ReplyRepoCloning"
         timeout: "15"
       - name: "task2_green"
-        taskContent: |
-          #!/bin/bash
-          ls > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/greenNode/green_dest_dir/task2_green/outputs.txt
+        taskContent: "/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/greenNode/green_dest_dir/task1_green/proof_of_concept_eDelivery_repo.git/task2_green/task2_green.sh"
         worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
         callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
         timeout: "15"
       - name: "task3_green"
-        taskContent: |
-          #!/bin/bash
-          ps aux > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/greenNode/green_dest_dir/task3_green/outputs.txt
+        taskContent: "/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/greenNode/green_dest_dir/task1_green/proof_of_concept_eDelivery_repo.git/task3_green/task3_green.sh"
         worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
         callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
         timeout: "15"
@@ -29,16 +25,12 @@ workers:
         callback: "eu.bigan.fed.edelivery.ops.ReplyRepoCloning"
         timeout: "15"
       - name: "task2_pink"
-        taskContent: |
-          #!/bin/bash
-          echo "hola buenas" > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/pinkNode/pink_dest_dir/task2_pink/outputs.txt
+        taskContent: "/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/pinkNode/pink_dest_dir/task1_pink/proof_of_concept_eDelivery_repo.git/task2_pink/task2_pink.sh"
         worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
         callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
         timeout: "15"
       - name: "task3_pink"
-        taskContent: |
-          #!/bin/bash
-          ls -l > /Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/pinkNode/pink_dest_dir/task3_pink/outputs.txt
+        taskContent: "/Users/jorgebernalromero/Documents/INGENIERIA_INFORMATICA/Cuarto_uni/Segundo_cuatri/TFG/communication_files/pinkNode/pink_dest_dir/task1_pink/proof_of_concept_eDelivery_repo.git/task3_pink/task3_pink.sh"
         worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
         callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
         timeout: "15"

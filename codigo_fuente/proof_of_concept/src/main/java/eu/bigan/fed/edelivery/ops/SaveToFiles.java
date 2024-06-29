@@ -25,19 +25,14 @@ public class SaveToFiles implements BiganFedListener{
 	  
 	  final Logger logger = LogManager.getLogger(SaveToFiles.class);
 	 
-      //System.out.println("estoy dentro del handling callback");
 	  logger.info("Estoy dentro de la función de callback asignada 'saveToFiles'");
       
       try {
 	      MapMessage m = (MapMessage) messageMap;
 	      if (messageMap instanceof MapMessage) {
-	          //System.out.println(messageMap.getJMSMessageID());
-	          //System.out.println(m.getBytes("payload_1"));
-	          //System.out.println(new String(m.getBytes("payload_1"),"UTF-8"));
 	
 	          String fromNodeID = m.getStringProperty("fromPartyId");
-	          //System.out.println(fromNodeID);
-	          
+
 	          String messageId = m.getStringProperty("conversationId");
 	
 			  String blueDirRecFromGreen=EnvParameters.getParameter("blueDirRecFromGreen");
@@ -63,7 +58,7 @@ public class SaveToFiles implements BiganFedListener{
 	          
 	          File destinationFile = new File(saveDir, "payload_1");
 	          FileManager.writeBytesToFile(destinationFile, m.getBytes("payload_1"));
-	          //System.out.println("File saved to: " + destinationFile.getAbsolutePath());
+
 	          logger.info("Archivo 'payload_1' guardado correctamente.");
 	          
 	          ReaderJsonContent reader = new ReaderJsonContent();
@@ -84,14 +79,13 @@ public class SaveToFiles implements BiganFedListener{
                   }
                   logger.info("Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.");
               }
-              else { //outputCode == "1" --> error
+              else {
             	  logger.error("Ha habido un problema con la tarea" + messageId + "en el nodo worker. El campo 'results' del 'payload_1' está vacío.");
               }
 	          
        		}
 	
 	      else{
-	          //System.out.println("No Message Found!");
 	    	  logger.error("No se ha conseguido guardar el archivo.");
 	      }
       } catch (Exception e) {

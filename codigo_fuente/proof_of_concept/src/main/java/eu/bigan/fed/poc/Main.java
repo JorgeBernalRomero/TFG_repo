@@ -2,7 +2,6 @@ package eu.bigan.fed.poc;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import javax.jms.Session;
 import eu.bigan.fed.edelivery.jms.*;
 import eu.bigan.fed.edelivery.message.*;
@@ -25,11 +24,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		final Logger logger = LogManager.getLogger(Main.class);
-			  
-		//logger.info("Mensaje de información sacado por el logger (ejemplo MAIN).");
-		//logger.error("Mensaje de error sacado por el logger (ejemplo MAIN).");
-		
-		//System.out.println("hola estoy en el main del coord");
+
 		logger.info("Comienza el coordinador.");
 		  
 		SessionBuilder sessionBuilder = new SessionBuilder();
@@ -76,14 +71,10 @@ public class Main {
 				MessageMetadata metadata = new MessageMetadata(messageId, destNode, callback, status);
 				messageRegistry.addMessage(metadata);
 	      
-				//recupero el mensaje que acabo de añadir
 				MessageMetadata actualMessage = messageRegistry.getMessageFromListById(messageId);
 	      
 				JsonGenerator jsonGenerator = new JsonGenerator();
 				String sendingPayload = jsonGenerator.generateJson(workerTask, taskContent, messageId);
-				
-				//System.out.println(sendingPayload);
-		      
 		      
 				Thread timeoutThread = new Thread(() -> {
 					Timeout timeoutFunc = new Timeout();
@@ -94,14 +85,13 @@ public class Main {
 					sender.send(destNode, messageId, sendingPayload);
 				});
 
-				// Iniciar los hilos simultáneamente
 				timeoutThread.start();
 				messageThread.start();
 				
 				
 				//antes de tener la máquina de estados es necesario poner el siguiente sleep
 				try {
-				TimeUnit.SECONDS.sleep(5); //si pongo 20 no llegan (coordinador está a 15) si pongo 5 si llegan
+				TimeUnit.SECONDS.sleep(5);
 	            logger.info("Se ha producido un sleep de 5 segundos.");
 				} catch (InterruptedException e) {
 	            logger.error("Ha habido un error en el sleep de 5 segundos.");

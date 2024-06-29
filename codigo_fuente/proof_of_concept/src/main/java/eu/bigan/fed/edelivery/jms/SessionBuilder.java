@@ -38,8 +38,6 @@ public class SessionBuilder {
 			
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 			
-			//System.out.println("he creado la sesión");
-			
 			logger.info("La sesión se ha creado correctamente.");
 			
 		} catch (JMSException e) {
@@ -49,5 +47,4 @@ public class SessionBuilder {
 		
 		return session;
 	}
-
 }

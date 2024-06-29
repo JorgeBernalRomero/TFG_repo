@@ -12,6 +12,6 @@ public class StatusManager{
 		return status;
 	}
 	
-	//PENDIENTE IMPLEMENTAR EL RESTO DE COSAS
+	//PENDIENTE IMPLEMENTAR
 	
 }

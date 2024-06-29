@@ -34,8 +34,6 @@ public class ConsumerBuilder {
 			consumer = session.createConsumer(queue, "", true);
 			consumer.setMessageListener((MessageListener) new MessageBroker(messageRegistry));
 			
-			//System.out.println("acabo de crear el consumer");
-			
 			logger.info("El consumer se ha creado correctamente.");
 
 		} catch (JMSException e) {

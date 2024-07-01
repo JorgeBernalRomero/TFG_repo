@@ -1,14 +1,12 @@
 package eu.bigan.fed.edelivery.ops;
 
 import java.io.File;
-
 import javax.jms.MapMessage;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
+import eu.bigan.fed.edelivery.message.MessageMetadata;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 import eu.bigan.fed.edelivery.utils.FileManager;
 import eu.bigan.fed.edelivery.utils.ReaderJsonContent;
-import eu.bigan.fed.edelivery.utils.StatusManager;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +21,7 @@ public class ReplyRepoCloning implements BiganFedListener{
   /**
    * 
    */
-  public void handleCallback(MapMessage messageMap) {
+  public void handleCallback(MapMessage messageMap, MessageMetadata message) {
 	  
 	  final Logger logger = LogManager.getLogger(ReplyRepoCloning.class);
 	 
@@ -82,7 +80,8 @@ public class ReplyRepoCloning implements BiganFedListener{
               
               if (outputCodeAsInt == 0) {
                   logger.info("La tarea de clonación " + messageId + " se ha completado correctamente en el nodo " + fromNodeID + ". Resultados de la ejecución en outputs.txt.");
-                  StatusManager.setStatus(1);
+                  message.setStatus(2);
+                  
               }
               else {
             	  logger.error("La tarea de clonación " + messageId + " no se ha completado correctamente en el nodo " + fromNodeID + ". Resultados de la ejecución fallida en outputs.txt.");

@@ -5,12 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.yaml.snakeyaml.Yaml;
-
-import eu.bigan.fed.poc.Main;
 
 /**
  * Texto sobre lo que hace esta clase.
@@ -18,124 +15,54 @@ import eu.bigan.fed.poc.Main;
  *
  */
 public class YamlReader {
-
 	
-    /*public List<String[]> read() {
-    	
-    	final Logger logger = LogManager.getLogger(YamlReader.class);
-    	
-        List<String[]> processList = new ArrayList<>();
+	public List<String[]> read() {
 
-        String file_yaml_path = EnvParameters.getParameter("blueNodeYamlSource");
-        File yamlFile = new File(file_yaml_path);
+		  final Logger logger = LogManager.getLogger(YamlReader.class);
 
-        try (FileReader reader = new FileReader(yamlFile)) {
-            Yaml yaml = new Yaml();
-            Object data = yaml.load(reader);
+		  List<String[]> processList = new ArrayList<>();
+		  String file_yaml_path = EnvParameters.getParameter("blueNodeYamlSource");
+		  File yamlFile = new File(file_yaml_path);
 
-            if (data instanceof java.util.Map) {
-                java.util.Map<String, Object> map = (java.util.Map<String, Object>) data;
-                java.util.List<Object> workers = (java.util.List<Object>) map.get("workers");
+		  try (FileReader reader = new FileReader(yamlFile)) {
+		    Yaml yaml = new Yaml();
+		    Object data = yaml.load(reader);
 
-                for (Object worker : workers) {
-                    if (worker instanceof java.util.Map) {
-                        java.util.Map<String, Object> workerMap = (java.util.Map<String, Object>) worker;
-                        String workerName = (String) workerMap.get("name");
-                        java.util.List<Object> actions = (java.util.List<Object>) workerMap.get("actions");
+		    if (data instanceof java.util.Map) {
+		      java.util.Map<String, Object> map = (java.util.Map<String, Object>) data;
 
-                        for (Object action : actions) {
-                            if (action instanceof java.util.Map) {
-                                java.util.Map<String, Object> actionMap = (java.util.Map<String, Object>) action;
-                                String actionName = (String) actionMap.get("name");
-                                String taskContent = (String) actionMap.get("taskContent");
-                                String workerTask = (String) actionMap.get("worker_task");
-                                String callback = (String) actionMap.get("callback");
-                                String timeout =(String) actionMap.get("timeout");
+		      List<Object> tasks = (List<Object>) map.get("tasks");
 
-                                String[] process = new String[]{workerName, actionName, taskContent, workerTask, callback, timeout};
-                                processList.add(process);
-                            }
-                        }
-                    }
-                }
-            }
-            
-            logger.info("Lectura del yaml correcta.");
-            
-        } catch (IOException e) {
-        	logger.error("Lectura del yaml incorrecta.");
-        	
-        	e.printStackTrace();
-        }
+		      if (tasks != null) {
+		        for (Object taskObject : tasks) {
+		          if (taskObject instanceof java.util.Map) {
+		            java.util.Map<String, Object> taskMap = (java.util.Map<String, Object>) taskObject;
 
-        return processList;
-    }*/
-	
-	   /**
-	   * 
-	   * @return
-	   */
-	   public List<String[]> read() {
+		            String actionName = (String) taskMap.get("actionName");
+		            String workerName = (String) taskMap.get("workerName");
+		            String taskContent = (String) taskMap.get("taskContent");
+		            String workerTask = (String) taskMap.get("worker_task");
+		            String callback = (String) taskMap.get("callback");
+		            String timeout = (String) taskMap.get("timeout");
 
-	      final Logger logger = LogManager.getLogger(YamlReader.class);
+		            String[] process = new String[]{workerName, actionName, taskContent, workerTask, callback, timeout};
+		            processList.add(process);
+		          }
+		        }
+		      } else {
+		        logger.warn("No 'tasks' key found in the YAML file.");
+		      }
+		    } else {
+		      logger.warn("Unexpected root object type in YAML file. Expected Map.");
+		    }
 
-	       List<String[]> processList = new ArrayList<>();
-	        List<String[]> bashTaskList = new ArrayList<>(); // Lista temporal para tareas "ExeScriptBash"
+		    logger.info("Lectura del yaml correcta.");
 
-	       String file_yaml_path = EnvParameters.getParameter("blueNodeYamlSource");
-	       File yamlFile = new File(file_yaml_path);
+		  } catch (IOException e) {
+		    logger.error("Lectura del yaml incorrecta.");
+		    e.printStackTrace();
+		  }
 
-	       try (FileReader reader = new FileReader(yamlFile)) {
-	           Yaml yaml = new Yaml();
-	           Object data = yaml.load(reader);
-
-	           if (data instanceof java.util.Map) {
-	               java.util.Map<String, Object> map = (java.util.Map<String, Object>) data;
-	               java.util.List<Object> workers = (java.util.List<Object>) map.get("workers");
-
-	               for (Object worker : workers) {
-	                   if (worker instanceof java.util.Map) {
-	                       java.util.Map<String, Object> workerMap = (java.util.Map<String, Object>) worker;
-	                       String workerName = (String) workerMap.get("name");
-	                       java.util.List<Object> actions = (java.util.List<Object>) workerMap.get("actions");
-
-	                       for (Object action : actions) {
-	                           if (action instanceof java.util.Map) {
-	                               java.util.Map<String, Object> actionMap = (java.util.Map<String, Object>) action;
-	                               String actionName = (String) actionMap.get("name");
-	                               String taskContent = (String) actionMap.get("taskContent");
-	                               String workerTask = (String) actionMap.get("worker_task");
-	                               String callback = (String) actionMap.get("callback");
-	                               String timeout =(String) actionMap.get("timeout");
-
-	                               String[] process = new String[]{workerName, actionName, taskContent, workerTask, callback, timeout};
-
-                                    if (workerTask.equals("eu.bigan.fed.edelivery.ops.ExeScriptBash")) {
-                                        bashTaskList.add(process);
-                                    }
-                                    else {
-                                        processList.add(process);
-                                    }
-	                            }
-	                       }
-	                   }
-	               }
-	           }
-
-	           logger.info("Lectura del yaml correcta.");
-
-	       } catch (IOException e) {
-	          logger.error("Lectura del yaml incorrecta.");
-
-	          e.printStackTrace();
-	       }
-
-	        processList.addAll(bashTaskList);
-
-	       return processList;
-	   }
+		  return processList;
+		}
 }
-
-
-
-

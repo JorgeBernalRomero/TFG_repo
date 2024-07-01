@@ -3,10 +3,10 @@ package eu.bigan.fed.edelivery.ops;
 import java.io.File;
 import javax.jms.MapMessage;
 import eu.bigan.fed.edelivery.message.BiganFedListener;
+import eu.bigan.fed.edelivery.message.MessageMetadata;
 import eu.bigan.fed.edelivery.utils.EnvParameters;
 import eu.bigan.fed.edelivery.utils.FileManager;
 import eu.bigan.fed.edelivery.utils.ReaderJsonContent;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,7 +21,7 @@ public class SaveToFiles implements BiganFedListener{
   /**
    * 
    */
-  public void handleCallback(MapMessage messageMap) {
+  public void handleCallback(MapMessage messageMap, MessageMetadata message) {
 	  
 	  final Logger logger = LogManager.getLogger(SaveToFiles.class);
 	 
@@ -78,7 +78,8 @@ public class SaveToFiles implements BiganFedListener{
                       e.printStackTrace();
                   }
                   logger.info("Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.");
-              }
+                  message.setStatus(2);
+              }   
               else {
             	  logger.error("Ha habido un problema con la tarea" + messageId + "en el nodo worker. El campo 'results' del 'payload_1' está vacío.");
               }

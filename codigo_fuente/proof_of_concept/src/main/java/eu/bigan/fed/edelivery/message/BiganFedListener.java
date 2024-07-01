@@ -13,5 +13,5 @@ public interface BiganFedListener {
 	 * 
 	 * @param messageMap
 	 */
-	public void handleCallback(MapMessage messageMap);
+	public void handleCallback(MapMessage messageMap, MessageMetadata message);
 }

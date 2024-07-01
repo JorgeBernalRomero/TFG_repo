@@ -55,7 +55,7 @@ public class MessageBroker implements MessageListener {
 					logger.info("El mensaje ha sido encontrado en la lista de mensajes.");
 					if(status !=1) {
 						BiganFedListener callback = coincidence.getCallback();
-						callback.handleCallback(m);
+						callback.handleCallback(m, coincidence);
 					}
 					else {
 						logger.info("Timeout excedido para el mensaje a procesar. No se llama a la función de callback.");

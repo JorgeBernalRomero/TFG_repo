@@ -435,3 +435,71 @@
 17:24:28 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Archivo 'payload_1' guardado correctamente.
 17:24:28 INFO  eu.bigan.fed.edelivery.utils.ReaderJsonContent - Se ha leído correctamente el archivo json.
 17:24:28 INFO  eu.bigan.fed.edelivery.ops.SaveToFiles - Se ha guardado el contenido del campo 'results' del 'payload_1' en el archivo 'outputs.txt'.
+12:50:16 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+12:50:16 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+12:50:16 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+12:50:16 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+12:50:16 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+12:50:16 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:50:16 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:50:16 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:50:16 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:50:16 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:50:16 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:50:16 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:50:16 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:50:16 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:50:16 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:50:16 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:50:16 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:47 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+12:51:47 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+12:51:47 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+12:51:47 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+12:51:47 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+12:51:47 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:47 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:47 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:47 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:47 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:47 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:47 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:47 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:47 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:47 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:47 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:47 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:58 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+12:51:58 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+12:51:58 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+12:51:58 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+12:51:58 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+12:51:58 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:58 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:58 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:58 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:58 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:58 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:58 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:58 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:58 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:58 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:51:58 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:51:58 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:52:03 INFO  eu.bigan.fed.poc.Main - Comienza el coordinador.
+12:52:03 INFO  eu.bigan.fed.edelivery.jms.SessionBuilder - La sesión se ha creado correctamente.
+12:52:03 INFO  eu.bigan.fed.edelivery.jms.ConsumerBuilder - El consumer se ha creado correctamente.
+12:52:03 INFO  eu.bigan.fed.edelivery.jms.SenderBuilder - Se ha creado el producer correctamente.
+12:52:03 INFO  eu.bigan.fed.edelivery.utils.YamlReader - Lectura del yaml correcta.
+12:52:03 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:52:03 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:52:03 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:52:03 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:52:03 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:52:03 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:52:03 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:52:03 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:52:03 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:52:03 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.
+12:52:03 INFO  eu.bigan.fed.edelivery.message.MessageRegistry - Mensaje añadido correctamente
+12:52:03 INFO  eu.bigan.fed.edelivery.utils.JsonGenerator - Json generado correctamente.

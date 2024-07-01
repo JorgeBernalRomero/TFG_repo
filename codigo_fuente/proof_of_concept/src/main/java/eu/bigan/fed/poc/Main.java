@@ -87,6 +87,7 @@ public class Main {
 				timeoutThread.start();
 				messageThread.start();
 				
+				//change the following lines (its hardcoded)
 				if (i == 0 || i == 3) {
 					int statusSMaux = StatusManager.getStatus();
 					while(statusSMaux == 0){

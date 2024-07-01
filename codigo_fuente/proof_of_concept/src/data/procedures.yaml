@@ -34,3 +34,7 @@ workers:
         worker_task: "eu.bigan.fed.edelivery.ops.ExeScriptBash"
         callback: "eu.bigan.fed.edelivery.ops.SaveToFiles"
         timeout: "15"
+coordinator:
+  - actions:
+    - name: "synchronizeRepoCloning"
+    - name: "synchronizeExecutingBashScript"
